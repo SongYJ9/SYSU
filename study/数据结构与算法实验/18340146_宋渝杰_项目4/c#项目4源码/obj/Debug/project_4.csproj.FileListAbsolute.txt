@@ -1,0 +1,9 @@
+C:\Users\Song\source\repos\project_4\bin\Debug\project_4.exe.config
+C:\Users\Song\source\repos\project_4\bin\Debug\project_4.exe
+C:\Users\Song\source\repos\project_4\bin\Debug\project_4.pdb
+C:\Users\Song\source\repos\project_4\obj\Debug\project_4.Properties.Resources.resources
+C:\Users\Song\source\repos\project_4\obj\Debug\project_4.csproj.GenerateResource.cache
+C:\Users\Song\source\repos\project_4\obj\Debug\project_4.exe
+C:\Users\Song\source\repos\project_4\obj\Debug\project_4.pdb
+C:\Users\Song\source\repos\project_4\obj\Debug\project_4.Form1.resources
+C:\Users\Song\source\repos\project_4\obj\Debug\project_4.csprojAssemblyReference.cache

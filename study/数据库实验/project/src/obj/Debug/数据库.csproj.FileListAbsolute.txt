@@ -1,0 +1,52 @@
+C:\Users\Song\source\repos\数据库\bin\Debug\数据库.exe.config
+C:\Users\Song\source\repos\数据库\bin\Debug\数据库.exe
+C:\Users\Song\source\repos\数据库\bin\Debug\数据库.pdb
+C:\Users\Song\source\repos\数据库\obj\Debug\数据库.csprojAssemblyReference.cache
+C:\Users\Song\source\repos\数据库\obj\Debug\数据库.Properties.Resources.resources
+C:\Users\Song\source\repos\数据库\obj\Debug\数据库.csproj.GenerateResource.cache
+C:\Users\Song\source\repos\数据库\obj\Debug\数据库.csproj.CoreCompileInputs.cache
+C:\Users\Song\source\repos\数据库\obj\Debug\数据库.exe
+C:\Users\Song\source\repos\数据库\obj\Debug\数据库.pdb
+C:\Users\Song\source\repos\数据库\obj\Debug\数据库.登陆页面.resources
+C:\Users\Song\source\repos\数据库\obj\Debug\数据库.主页面.resources
+C:\Users\Song\source\repos\数据库\bin\Debug\MySql.Data.dll
+C:\Users\Song\source\repos\数据库\bin\Debug\Google.Protobuf.dll
+C:\Users\Song\source\repos\数据库\bin\Debug\Zstandard.Net.dll
+C:\Users\Song\source\repos\数据库\bin\Debug\K4os.Compression.LZ4.Streams.dll
+C:\Users\Song\source\repos\数据库\bin\Debug\BouncyCastle.Crypto.dll
+C:\Users\Song\source\repos\数据库\bin\Debug\Ubiety.Dns.Core.dll
+C:\Users\Song\source\repos\数据库\bin\Debug\Renci.SshNet.dll
+C:\Users\Song\source\repos\数据库\bin\Debug\System.Buffers.dll
+C:\Users\Song\source\repos\数据库\bin\Debug\K4os.Compression.LZ4.dll
+C:\Users\Song\source\repos\数据库\bin\Debug\K4os.Hash.xxHash.dll
+C:\Users\Song\source\repos\数据库\bin\Debug\System.Memory.dll
+C:\Users\Song\source\repos\数据库\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
+C:\Users\Song\source\repos\数据库\bin\Debug\MySql.Data.xml
+C:\Users\Song\source\repos\数据库\obj\Debug\数据库.exe.config
+C:\Users\Song\source\repos\数据库\obj\Debug\数据库.csproj.CopyComplete
+C:\Users\Song\Desktop\S & W\数据库\project\src\bin\Debug\数据库.exe.config
+C:\Users\Song\Desktop\S & W\数据库\project\src\bin\Debug\数据库.exe
+C:\Users\Song\Desktop\S & W\数据库\project\src\bin\Debug\数据库.pdb
+C:\Users\Song\Desktop\S & W\数据库\project\src\bin\Debug\MySql.Data.dll
+C:\Users\Song\Desktop\S & W\数据库\project\src\bin\Debug\Google.Protobuf.dll
+C:\Users\Song\Desktop\S & W\数据库\project\src\bin\Debug\Zstandard.Net.dll
+C:\Users\Song\Desktop\S & W\数据库\project\src\bin\Debug\K4os.Compression.LZ4.Streams.dll
+C:\Users\Song\Desktop\S & W\数据库\project\src\bin\Debug\BouncyCastle.Crypto.dll
+C:\Users\Song\Desktop\S & W\数据库\project\src\bin\Debug\Ubiety.Dns.Core.dll
+C:\Users\Song\Desktop\S & W\数据库\project\src\bin\Debug\Renci.SshNet.dll
+C:\Users\Song\Desktop\S & W\数据库\project\src\bin\Debug\System.Buffers.dll
+C:\Users\Song\Desktop\S & W\数据库\project\src\bin\Debug\K4os.Compression.LZ4.dll
+C:\Users\Song\Desktop\S & W\数据库\project\src\bin\Debug\K4os.Hash.xxHash.dll
+C:\Users\Song\Desktop\S & W\数据库\project\src\bin\Debug\System.Memory.dll
+C:\Users\Song\Desktop\S & W\数据库\project\src\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
+C:\Users\Song\Desktop\S & W\数据库\project\src\bin\Debug\MySql.Data.xml
+C:\Users\Song\Desktop\S & W\数据库\project\src\obj\Debug\数据库.csprojAssemblyReference.cache
+C:\Users\Song\Desktop\S & W\数据库\project\src\obj\Debug\数据库.exe.config
+C:\Users\Song\Desktop\S & W\数据库\project\src\obj\Debug\数据库.主页面.resources
+C:\Users\Song\Desktop\S & W\数据库\project\src\obj\Debug\数据库.登陆页面.resources
+C:\Users\Song\Desktop\S & W\数据库\project\src\obj\Debug\数据库.Properties.Resources.resources
+C:\Users\Song\Desktop\S & W\数据库\project\src\obj\Debug\数据库.csproj.GenerateResource.cache
+C:\Users\Song\Desktop\S & W\数据库\project\src\obj\Debug\数据库.csproj.CoreCompileInputs.cache
+C:\Users\Song\Desktop\S & W\数据库\project\src\obj\Debug\数据库.csproj.CopyComplete
+C:\Users\Song\Desktop\S & W\数据库\project\src\obj\Debug\数据库.exe
+C:\Users\Song\Desktop\S & W\数据库\project\src\obj\Debug\数据库.pdb

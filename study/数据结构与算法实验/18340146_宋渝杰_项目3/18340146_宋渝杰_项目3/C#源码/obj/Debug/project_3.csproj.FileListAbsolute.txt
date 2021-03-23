@@ -1,0 +1,10 @@
+C:\Users\Song\source\repos\project_3\bin\Debug\project_3.exe.config
+C:\Users\Song\source\repos\project_3\bin\Debug\project_3.exe
+C:\Users\Song\source\repos\project_3\bin\Debug\project_3.pdb
+C:\Users\Song\source\repos\project_3\obj\Debug\project_3.csprojAssemblyReference.cache
+C:\Users\Song\source\repos\project_3\obj\Debug\project_3.Properties.Resources.resources
+C:\Users\Song\source\repos\project_3\obj\Debug\project_3.csproj.GenerateResource.cache
+C:\Users\Song\source\repos\project_3\obj\Debug\project_3.exe
+C:\Users\Song\source\repos\project_3\obj\Debug\project_3.pdb
+C:\Users\Song\source\repos\project_3\obj\Debug\project_3.族谱.resources
+C:\Users\Song\source\repos\project_3\obj\Debug\project_3.添加子节点.resources
