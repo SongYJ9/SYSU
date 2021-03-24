@@ -1,4 +1,4 @@
-## operating system
+## Operating system
 
 这里是 SYSU SDCS 计算机类本科操作系统实验内容
 
