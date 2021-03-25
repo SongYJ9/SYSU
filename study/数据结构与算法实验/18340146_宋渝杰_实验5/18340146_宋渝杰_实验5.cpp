@@ -74,7 +74,16 @@ public:
 			cout << root->value << " ";
 		}
 	}
+	void change(Node* root) {
+		if (root) {
+			swap(root->left, root->right);
+			change(root->left);
+			change(root->right);
+		}
+	} 
 	void interChange() { //交换所有的左右节点
+		change(root);
+		/* 非递归版本
 		vector<Node*> vec;
 		push(root, vec);
 		Node* temp;
@@ -82,7 +91,7 @@ public:
 			temp = vec[i]->left;
 			vec[i]->left = vec[i]->right;
 			vec[i]->right = temp;
-		}
+		} */
 	}
 	void show() { //多种方式展示树
 		cout << "先序遍历: ";

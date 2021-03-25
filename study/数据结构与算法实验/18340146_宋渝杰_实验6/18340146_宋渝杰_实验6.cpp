@@ -219,6 +219,24 @@ int main()
                         else a[i][j] = matrix[i][j];
                     }
                 }
+                int dij[n],vis[n];
+                for (int i=0; i<n; i++) {
+                    dij[i] = a[x][i];
+                    vis[i] = (i == x ? 1 : 0);
+                }
+                for (int i=0; i<n-1; i++) {
+                    int mi = 1e7, index = -1;
+                    for (int j=0; j<n; j++) {
+                        if (vis[j] == 0 and dij[j] < mi) {
+                            mi = dij[j];
+                            index = j;
+                        }
+                    }
+                    vis[index] = 1;
+                    for (int j=0; j<n; j++) dij[j] = min(dij[j], dij[index]+a[index][j]);
+                }
+                cout<<"   两顶点的最短距离为： "<<dij[y]<<endl;
+                /*
                 int i,j,min=10000,min2,min3=1;
                 int b[n],c[n];
                 for(i=0;i<n;i++)
@@ -259,6 +277,7 @@ int main()
                    for(j=0;j<n;j++)
                         if(i==j) a[i][j]=0;
                 cout<<"   两顶点的最短距离为： "<<a[x][y]<<endl;
+                */
             }
             else{
                 cout<<"   顶点不存在！请重新输入：";

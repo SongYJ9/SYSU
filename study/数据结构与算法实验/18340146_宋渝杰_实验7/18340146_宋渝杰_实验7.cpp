@@ -21,7 +21,7 @@ struct node{
     node* next;
 };
 
-//Í¬Ñ§ÐÅÏ¢£º£¨ÐÔ±ðºÍµç»°ÎªÐé¹¹£© 
+//Í¬Ñ§ï¿½ï¿½Ï¢ï¿½ï¿½ï¿½ï¿½ï¿½Ô±ï¿½Íµç»°Îªï¿½é¹¹ï¿½ï¿½ 
 long long Phone = 13100000000;
 int Sex = 1;
 node* Nodearr[80];
@@ -63,7 +63,7 @@ int Numberarr[80] = {
     17343075,17343076,17343077,17343078,17343079,17343080,17343081,17343082
 };
 
-void menu()//²Ëµ¥ 
+void menu()//ï¿½Ëµï¿½ 
 {
     cout<<endl;
     cout<<"      menu:"<<endl;
@@ -75,7 +75,7 @@ void menu()//²Ëµ¥
     cout<<endl;
 }
 
-void Show(){//Õ¹Ê¾º¯Êý£º 
+void Show(){//Õ¹Ê¾ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ 
     cout<<endl;
     for(int i=0;i<10;i++){
         node* temp = Hash[i];
@@ -89,7 +89,7 @@ void Show(){//Õ¹Ê¾º¯Êý£º
     }
 }
 
-void Search(){//ËÑË÷º¯Êý£º 
+void Search(){//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ 
     cout<<endl;
     cout<<"Please input the student's name:"<<endl;
     string s;
@@ -114,7 +114,7 @@ void Search(){//ËÑË÷º¯Êý£º
     cout<<"     count time = "<<count<<endl;
 }
 
-void Insert(){//²åÈëº¯Êý£º 
+void Insert(){//ï¿½ï¿½ï¿½ëº¯ï¿½ï¿½ï¿½ï¿½ 
     cout<<endl;
     string s;
     int id,sex;
@@ -146,7 +146,7 @@ void Insert(){//²åÈëº¯Êý£º
     cout<<"Insert success!"<<endl;
 }
 
-void Delete(){//É¾³ýº¯Êý£º 
+void Delete(){//É¾ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ 
     string s;
     cout<<"Please input the student's name:"<<endl;
     cin>>s;
@@ -178,7 +178,7 @@ int main()
 {
     int i,j;
     string c;
-    //¿ªÊ¼¹¹Ôì»ù±¾µÄ¹þÏ£±í£º 
+    //ï¿½ï¿½Ê¼ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¹ï¿½Ï£ï¿½ï¿½ï¿½ï¿½ 
     for(i=0;i<80;i++) Nodearr[i] = new node(Namearr[i],Numberarr[i],getSex(),getPhone());
     for(i=0;i<10;i++) Hash[i] = NULL;
     for(i=0;i<80;i++){
@@ -192,7 +192,7 @@ int main()
             temp->next = Nodearr[i];
         }
     }
-    //¹¹Ôì½áÊø 
+    //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ 
     th:
     menu();
     cin>>c;
