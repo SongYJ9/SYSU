@@ -1,0 +1,48 @@
+C:\Users\Song\Desktop\工作与学习\Visual Studio\人体行为管理系统2\bin\Debug\人体行为管理系统2.exe.config
+C:\Users\Song\Desktop\工作与学习\Visual Studio\人体行为管理系统2\bin\Debug\人体行为管理系统2.exe
+C:\Users\Song\Desktop\工作与学习\Visual Studio\人体行为管理系统2\bin\Debug\人体行为管理系统2.pdb
+C:\Users\Song\Desktop\工作与学习\Visual Studio\人体行为管理系统2\obj\Debug\人体行为管理系统2.csprojAssemblyReference.cache
+C:\Users\Song\Desktop\工作与学习\Visual Studio\人体行为管理系统2\obj\Debug\人体行为管理系统2.Properties.Resources.resources
+C:\Users\Song\Desktop\工作与学习\Visual Studio\人体行为管理系统2\obj\Debug\人体行为管理系统2.csproj.GenerateResource.cache
+C:\Users\Song\Desktop\工作与学习\Visual Studio\人体行为管理系统2\obj\Debug\人体行为管理系统2.csproj.CoreCompileInputs.cache
+C:\Users\Song\Desktop\工作与学习\Visual Studio\人体行为管理系统2\obj\Debug\人体行为管理系统2.exe
+C:\Users\Song\Desktop\工作与学习\Visual Studio\人体行为管理系统2\obj\Debug\人体行为管理系统2.pdb
+C:\Users\Song\Desktop\工作与学习\Visual Studio\人体行为管理系统2\obj\Debug\人体行为管理系统2.csproj.CopyComplete
+C:\Users\Song\Desktop\工作与学习\Visual Studio\人体行为管理系统2\obj\Debug\人体行为管理系统2.登录窗体.resources
+C:\Users\Song\Desktop\工作与学习\Visual Studio\人体行为管理系统2\obj\Debug\人体行为管理系统2.主窗体.resources
+C:\Users\Song\Desktop\工作与学习\Visual Studio\人体行为管理系统\bin\Debug\人体行为管理系统2.exe.config
+C:\Users\Song\Desktop\工作与学习\Visual Studio\人体行为管理系统\bin\Debug\人体行为管理系统2.exe
+C:\Users\Song\Desktop\工作与学习\Visual Studio\人体行为管理系统\bin\Debug\人体行为管理系统2.pdb
+C:\Users\Song\Desktop\工作与学习\Visual Studio\人体行为管理系统\obj\Debug\人体行为管理系统2.csprojAssemblyReference.cache
+C:\Users\Song\Desktop\工作与学习\Visual Studio\人体行为管理系统\obj\Debug\人体行为管理系统2.主窗体.resources
+C:\Users\Song\Desktop\工作与学习\Visual Studio\人体行为管理系统\obj\Debug\人体行为管理系统2.登录窗体.resources
+C:\Users\Song\Desktop\工作与学习\Visual Studio\人体行为管理系统\obj\Debug\人体行为管理系统2.Properties.Resources.resources
+C:\Users\Song\Desktop\工作与学习\Visual Studio\人体行为管理系统\obj\Debug\人体行为管理系统2.csproj.GenerateResource.cache
+C:\Users\Song\Desktop\工作与学习\Visual Studio\人体行为管理系统\obj\Debug\人体行为管理系统2.csproj.CoreCompileInputs.cache
+C:\Users\Song\Desktop\工作与学习\Visual Studio\人体行为管理系统\obj\Debug\人体行为管理系统2.csproj.CopyComplete
+C:\Users\Song\Desktop\工作与学习\Visual Studio\人体行为管理系统\obj\Debug\人体行为管理系统2.exe
+C:\Users\Song\Desktop\工作与学习\Visual Studio\人体行为管理系统\obj\Debug\人体行为管理系统2.pdb
+C:\Users\Song\Desktop\工作与学习\Visual Studio\人体行为管理系统\obj\Debug\人体行为管理系统2.添加基本个人信息.resources
+C:\Users\Song\Desktop\工作与学习\Visual Studio\人体行为管理系统\obj\Debug\人体行为管理系统2.添加身体信息.resources
+C:\Users\Song\Desktop\工作与学习\Visual Studio\人体行为管理系统\obj\Debug\人体行为管理系统2.添加健康问题信息.resources
+C:\Users\Song\Desktop\工作与学习\Visual Studio\人体行为管理系统\obj\Debug\人体行为管理系统2.查询修改数据.resources
+C:\Users\Song\Desktop\工作与学习\Visual Studio\人体行为管理系统\obj\Debug\人体行为管理系统2.删除数据.resources
+C:\Users\Song\Desktop\工作与学习\Visual Studio\人体行为管理系统\obj\Debug\人体行为管理系统2.数据统计.resources
+C:\Users\Song\Desktop\S & W\实验室文件\人体行为管理系统\bin\Debug\人体行为管理系统2.exe.config
+C:\Users\Song\Desktop\S & W\实验室文件\人体行为管理系统\bin\Debug\人体行为管理系统2.exe
+C:\Users\Song\Desktop\S & W\实验室文件\人体行为管理系统\bin\Debug\人体行为管理系统2.pdb
+C:\Users\Song\Desktop\S & W\实验室文件\人体行为管理系统\obj\Debug\人体行为管理系统2.csprojAssemblyReference.cache
+C:\Users\Song\Desktop\S & W\实验室文件\人体行为管理系统\obj\Debug\人体行为管理系统2.主窗体.resources
+C:\Users\Song\Desktop\S & W\实验室文件\人体行为管理系统\obj\Debug\人体行为管理系统2.删除数据.resources
+C:\Users\Song\Desktop\S & W\实验室文件\人体行为管理系统\obj\Debug\人体行为管理系统2.数据统计.resources
+C:\Users\Song\Desktop\S & W\实验室文件\人体行为管理系统\obj\Debug\人体行为管理系统2.查询修改数据.resources
+C:\Users\Song\Desktop\S & W\实验室文件\人体行为管理系统\obj\Debug\人体行为管理系统2.添加健康问题信息.resources
+C:\Users\Song\Desktop\S & W\实验室文件\人体行为管理系统\obj\Debug\人体行为管理系统2.添加基本个人信息.resources
+C:\Users\Song\Desktop\S & W\实验室文件\人体行为管理系统\obj\Debug\人体行为管理系统2.添加身体信息.resources
+C:\Users\Song\Desktop\S & W\实验室文件\人体行为管理系统\obj\Debug\人体行为管理系统2.登录窗体.resources
+C:\Users\Song\Desktop\S & W\实验室文件\人体行为管理系统\obj\Debug\人体行为管理系统2.Properties.Resources.resources
+C:\Users\Song\Desktop\S & W\实验室文件\人体行为管理系统\obj\Debug\人体行为管理系统2.csproj.GenerateResource.cache
+C:\Users\Song\Desktop\S & W\实验室文件\人体行为管理系统\obj\Debug\人体行为管理系统2.csproj.CoreCompileInputs.cache
+C:\Users\Song\Desktop\S & W\实验室文件\人体行为管理系统\obj\Debug\人体行为管理系统2.csproj.CopyComplete
+C:\Users\Song\Desktop\S & W\实验室文件\人体行为管理系统\obj\Debug\人体行为管理系统2.exe
+C:\Users\Song\Desktop\S & W\实验室文件\人体行为管理系统\obj\Debug\人体行为管理系统2.pdb
