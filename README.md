@@ -39,3 +39,13 @@ projects 文件夹主要存放大学做的一些科研和工程方面的工作
 ### part 5 else
 
 剩下的就是记录除此之外的生活啦
+
+### more
+
+blog：https://www.luogu.com.cn/blog/YuJieSong/
+
+洛谷个人空间：https://www.luogu.com.cn/user/296830
+
+codeforces：https://codeforc.es/profile/SONGYJ9
+
+[![](https://cfrating.ihcr.top/?user=SONGYJ9)](https://codeforces.ml/profile/SONGYJ9)
