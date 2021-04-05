@@ -48,8 +48,4 @@ blog：https://www.luogu.com.cn/blog/YuJieSong/
 
 codeforces：https://codeforc.es/profile/SONGYJ9  [![](https://cfrating.ihcr.top/?user=SONGYJ9)](https://codeforces.ml/profile/SONGYJ9)
 
-<<<<<<< HEAD
 If you wanna have a talk, please [1638846513@qq.com](https://mail.qq.com/)~
-=======
-If you wanna have a talk, please [1638846513@qq.com](https://mail.qq.com/)~
->>>>>>> 6a8e7e57406a8bf938309400a2b1431a0463c915
