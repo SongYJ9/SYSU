@@ -2,13 +2,13 @@
 
 中山大学 计算机科学与技术 宋渝杰
 
-#### Part 0 introduction
+### Part 0 introduction
 
 这里是中山大学计院某个大学生创建的仓库，用于记录他的大学生活~
 
 ~~居然到了大三才想到记录生活~~
 
-#### Part 1 study
+### Part 1 study
 
 study 文件夹主要存放的是大学以来所做过的一些有趣的作业文件
 
@@ -18,7 +18,7 @@ study 文件夹主要存放的是大学以来所做过的一些有趣的作业�
 
 大二换电脑的时候就直接统统丢掉啦~
 
-#### Part 2 projects
+### Part 2 projects
 
 projects 文件夹主要存放大学做的一些科研和工程方面的工作
 
@@ -28,7 +28,7 @@ projects 文件夹主要存放大学做的一些科研和工程方面的工作
 
 ~~不过也有可能选择不读研啦~~
 
-#### Part 3 competition
+### Part 3 competition
 
 大学参加了一些比赛~
 
@@ -40,17 +40,17 @@ projects 文件夹主要存放大学做的一些科研和工程方面的工作
 
 （虽然我只是个大一才知道 C/C++ 和编程是什么东西的老年人）
 
-#### Part 4 community
+### Part 4 community
 
 大学期间担任了学生会成员和班委委员
 
 把一些组织策划过的活动也记录了一下~
 
-#### Part 5 else
+### Part 5 else
 
 剩下的就是记录除此之外的生活啦
 
-#### More
+### More
 
 blog：https://www.luogu.com.cn/blog/YuJieSong/
 
