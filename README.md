@@ -50,6 +50,12 @@ projects 文件夹主要存放大学做的一些科研和工程方面的工作
 
 剩下的就是记录除此之外的生活啦
 
+### Part 6 技术栈
+
+由于最近在考虑秋招，因此也在此罗列一下本人熟悉和了解的一些东西：
+
+
+
 ### More
 
 blog：https://www.luogu.com.cn/blog/YuJieSong/
