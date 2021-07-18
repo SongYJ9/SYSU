@@ -1,0 +1,129 @@
+/*iframe{
+    width:80%;
+    height:100%;
+}*/
+.container{
+    width:100%;
+    /*display:flex;*/
+    /* margin-top: 50px; */
+}
+.left{
+    float:left;
+    /*flex:none;*/
+    position: fixed;
+    margin:0px auto;
+    width:250px;
+    height:100%;
+    background-color: #F0D9F0;
+    border: 1px 0px 0px 0px solid #797979;
+    box-shadow: 0px 3px 6px #000000;
+    margin-top: 45px;
+    /*margin-left: -100%;*/
+}
+.middle{
+    float:left;
+    /*flex:1;*/
+    width: 700px;
+    padding: 0px;
+    /*margin: 38px;*/
+    margin-left:300px;
+    margin-top: 45px;
+    /*overflow:hidden;*/
+    /*border: 1px 0px 0px 0px solid #B88EED;*/
+    /*box-shadow: 0px 3px 6px #B88EED;*/
+
+}
+.right{
+    width: 350px; 
+    float: left;
+    position: fixed;
+    margin-left:1050px;
+    margin-top: 45px;
+}
+.right-son{
+    /*float:left;*/
+    border-left:1px #797979 solid;
+    box-shadow: #000000;
+    
+}
+a{
+    text-decoration: none;
+    margin-left: 10px;
+    font-size: 20px;
+    font-family: '微软雅黑';
+    color: #5f5f5f;
+}
+p {
+    text-align: left;
+    font-size: 20px;
+    font-family: "微软雅黑";
+    overflow-wrap:break-word;
+}
+h1{
+    text-align: center;
+    font-size: 28px;
+    font-family: "微软雅黑";
+}
+h2{
+    text-align: left;
+    font-size: 28px;
+    font-family: "微软雅黑";
+}
+button{
+    width: 140px;
+    height: 40px;
+    text-align: center;
+    font-size: 20px;
+    font-family: "微软雅黑";
+    margin-left: 5px;
+    margin-top: 30px;
+    border: 1px 1px 1px 1px solid #797979;
+    /*box-shadow: 0px 3px 6px #000000;*/
+
+}
+.nav_outer{
+    position: fixed;
+}
+#post {
+    float: none;
+    left: 0px;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    position: fixed;
+    display: none;
+    margin: auto;
+    width: 800px;
+    height: 400px;
+    border: 1px solid #797979;
+    background-color: #FFFFFF;
+    border-radius: 5px;
+    border: 1px solid #797979;
+    box-shadow: 0px 3px 6px #5f5f5f;
+    z-index: 100;
+}
+#X {
+    margin-left:770px;
+    position: fixed;
+    width:30px;
+}
+.btn{
+    width:130px;
+    height: 35px;
+    background-color: transparent;
+    color: #AEA5B9;
+    font-size: medium;
+    font-family: '微软雅黑';
+    border-color: transparent;
+}
+.lastli{
+    position: absolute;
+    float:right;
+    right:-250px;
+}
+#nav_outer{
+    z-index:9999;
+}
+h2+p a {
+    color: #8063AE;
+}

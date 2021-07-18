@@ -1,0 +1,563 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>strategyForum</title>
+    <link rel="stylesheet" type="text/css" href="./questionForum.css" />
+    <link rel="stylesheet" type="text/css" href="../css/awesome/font-awesome.css" />
+</head>
+
+<body>
+    <div id="post">
+        <input id="X" type="button" onclick="close1(this)" value="X">
+        <iframe id="ifr" frameborder="0" width="800" height="400" src=""></iframe>
+    </div>
+    <div id="nav_outer">
+        <ul class="wrapper" id="nav">
+            <li class="CSer" style="color: #FFFFFF; ">中大CSer</li>
+            <li><a href="../Guide/c.html">指南</a></li>
+            <li><a href="../Resources/resources.html">资源</a></li>
+            <li>
+                <a href="#">资讯</a><i class="fa fa-caret-down logo"></i>
+                <ul class="subnav">
+                    <li><a href="../Info/matchInfo.html">比赛</a></li>
+                    <li><a href="../Info/jobInfo.html">招聘</a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="#">论坛</a><i class="fa fa-caret-down logo"></i>
+                <ul class="subnav">
+                    <li><a href="../Forum/questionForum.html">问题</a></li>
+                    <li><a href="../Forum/strategyForum.html">攻略</a></li>
+                </ul>
+            </li>
+            <li class="lastli"><a href="#"></a>
+                <ul class="subnav">
+                    <li><a><input class="btn" type="button" value="发布攻略帖" onclick="window1(1)"></a></li>
+                    <li><a><input class="btn" type="button" value="发布问题贴" onclick="window1(2)"></a></li>
+                    <li><a><input class="btn" type="button" value="发布资源" onclick="window1(3)"></a></li>
+                    <li><a><input class="btn" type="button" value="发布比赛资讯" onclick="window1(4)"></a></li>
+                    <li><a><input class="btn" type="button" value="发布招聘资讯" onclick="window1(5)"></a></li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+    <div id="container">
+    </div>
+    <script>
+        var check = 0;
+        function window1(i) {
+            var post = document.getElementById("post");
+            var container = post.parentNode;
+            var ifr = document.getElementById("ifr");
+            container.style.backgroundColor = "gray";
+            container.style.opacity = "80%";
+            if (i == 1)//发帖
+                ifr.src = "../post/strategyPost.html";
+            else if (i == 2)//发帖
+                ifr.src = "../post/problemPost.html";
+            else if (i == 3)//资源
+                ifr.src = "../post/resourceUpload.jsp";
+            else if (i == 4)//资讯
+                ifr.src = "../post/matchPost.html";
+            else if (i == 5)//资讯
+                ifr.src = "../post/jobPost.html";
+            post.style.display = "block";
+        }
+        function close1(btn) {
+            var post = btn.parentNode;
+            post.style.display = "none";
+            var container = btn.parentNode.parentNode;
+            console.log(container);
+            container.style.backgroundColor = "transparent";
+            container.style.opacity = 1.0;
+            // container.removeAttr("style.")
+        }
+        var data2 = JSON.stringify({ "Status": 200, "Msg": "success", "ImagePath": "../images/user/user.png" });
+        function getInfo() {
+            var jsonResponse = JSON.parse(data2);
+            if (jsonResponse["Status"] == 200) {
+                var name = document.createElement('li');
+                name.classList.add("name");
+                name.innerHTML = localStorage.getItem("Name");
+                var a = document.body.childNodes[3].childNodes[1].childNodes[11].childNodes[0];
+                a.href = "../Center/user.html";
+                var img = document.createElement('img');
+                img.src = jsonResponse["ImagePath"];
+                localStorage.setItem("ImagePath", jsonResponse["ImagePath"]);
+                img.classList.add("image");
+                a.appendChild(img);
+                console.log(document.body.childNodes[3].childNodes[1]);
+                document.body.childNodes[3].childNodes[1].insertBefore(name, document.body.childNodes[3].childNodes[1].childNodes[11]);
+            } else {
+                alert(jsonResponse["Msg"]);
+            }
+        }
+        var data1 = JSON.stringify([{
+            "ID": 0, "Name": 'abc', "ImagePath": '../images/1.png', "Title": 'asdfghjklqwetryuiiopzxcvbnm', "Content":
+                'balabalabalabalabalabbalabalabalabalabalabbalabalabalabalabalabbalabalabalabalabalabbalabalabalabalabalabbalabalabalabalabalabbalabalabalabalabalabbalabalabalabalabalabbalabalabalabalabalabalabalabalabalabalabalabalabalabalabalabalabalabalabalabalabalabalabalabalabalabalabalabalabalabalabalabalabalabalabalabalabalabalabalabalabalabalabalabalabalabalabalabalabalabalabalabalabalabalabalabalabalabalabalabalabalabalabalabalabalabalabalabalabalabalabalabalabalabalabalabalabalabalabalabalabalabalabalabalabalabalabalabalabalabalabalabala',
+            "Date": 'XXX.XXX.XXX', "Comment": 1, "Like": 2, "Favor": 0
+        },
+        { "ID": 1, "Name": 'defghiasdfghhjkldlisijfldhf', "ImagePath": '../images/1.png', "Title": '3', "Content": 'balabalabalabala', "Date": 'XXX.XXX.XXX', "Comment": 1, "Like": 2, "Favor": 0 },
+        { "ID": 2, "Name": 'hij', "ImagePath": '../images/1.png', "Title": '3', "Content": 'balabalabalabala', "Date": 'XXX.XXX.XXX', "Comment": 1, "Like": 2, "Favor": 0 }])
+        var com = JSON.stringify([{
+            "ID": 0, "Name": 'abc', "ImagePath": '../images/1.png', "Content":
+                'balabalabalabalabalabbalabalabalabalabalabbalabalabalabalabalabbalabalabalabalabalabbalabalabalabalabalabbalabalabalabalabalabbalabalabalabalabalabbal',
+            "Date": 'XXX.XXX.XXX'
+        },
+        {
+            "ID": 0, "Name": 'abc', "ImagePath": '../images/1.png', "Content":
+                '在这里输入评论在这里输入评论在这里输入评论在这里输入评论在这里输入评论在这里输入评论在这里输入评论在这里输入评论在这里输入评论在这里输入评论在这里输入评论在这里输入评论在这里输入评论在这里输入评论在这里输入评论在这里输入评论在这里输入评论在这里输入评论在这里输入评论在这里输入评论在这里输入评论在这里',
+            "Date": 'XXX.XXX.XXX'
+        },
+        { "ID": 0, "Name": 'abc', "ImagePath": '../images/1.png', "Content": 'balabalabalabalabalabbalabalabalabalabalabbalabalabalalabala', "Date": 'XXX.XXX.XXX' }]);
+        //test
+        function testGet() {
+            var question = JSON.parse(data1);
+            for (var i = 0; i < question.length; i++) {
+                var question1 = document.createElement('div');
+                question1.id = "question";
+                question1.className = "question";
+                var name = document.createElement('p');
+                name.innerHTML = question[i].Name;
+                name.id = "name";
+                var image = document.createElement('img');
+                image.src = question[i].ImagePath;
+                var date = document.createElement('p');
+                date.innerHTML = question[i].Date;
+                date.id = "date";
+                var hr = document.createElement('hr');
+                var title = document.createElement('p');
+                title.innerHTML = question[i].Title;
+                title.id = "title";
+                var contentdiv = document.createElement('div');
+                contentdiv.id = "contentdiv";
+                var content = document.createElement('p');
+                content.innerHTML = question[i].Content;
+                content.id = "content";
+                contentdiv.appendChild(content);
+                var btn = document.createElement('input');
+                btn.type = "button";
+                btn.value = "展开全文...";
+                btn.id = "btn";
+                btn.onclick = function () {
+                    extend(this);
+                };
+                var like = document.createElement('input');
+                like.type = "button";
+                like.value = "  " + question[i].Like;
+                like.id = "like";
+                like.name = question[i].ID;
+                like.onclick = function () {
+                    likeadd(this);
+                };
+                var favor = document.createElement('input');
+                favor.type = "button";
+                favor.value = "  " + question[i].Favor;
+                favor.id = "favor";
+                favor.name = question[i].ID;
+                favor.onclick = function () {
+                    favoradd(this);
+                };
+                var comment = document.createElement('input');
+                comment.type = "button";
+                comment.value = "  " + question[i].Comment;
+                comment.id = "comment";
+                comment.onclick = function () {
+                    commentaddtest(this);
+                }
+                var container = document.getElementById('container');
+                container.appendChild(question1);
+                question1.appendChild(image);//0
+                question1.appendChild(name);//1
+                question1.appendChild(date);//2
+                question1.appendChild(favor);//3
+                question1.appendChild(like);//4
+                question1.appendChild(comment);//5
+                question1.appendChild(hr);//6
+                question1.appendChild(title);//7
+                question1.appendChild(contentdiv);//8
+                question1.appendChild(btn);//9
+            }
+        }
+        function likeadd(like) {
+            like.style.background = "url(../images/like.png) no-repeat";
+            like.style.backgroundSize = "40px 40px";
+            var i = parseInt(like.value) + 1;
+            like.value = i;
+        }
+        function favoradd(favor) {
+            favor.style.background = "url(../images/favor.png) no-repeat";
+            favor.style.backgroundSize = "40px 40px";
+            var i = parseInt(favor.value) + 1;
+            favor.value = i;
+        }
+        function commentaddtest(comment) {
+            if (check == 0) {
+                check = 1;
+                commentgettest(comment);
+                var question1 = comment.parentNode;
+                var height = parseInt(question1.clientHeight) + 160 + parseInt(question1.childNodes[10].clientHeight);
+                question1.style.height = height + "px";
+                var commenttext = document.createElement('textarea');
+                commenttext.style.rows = "6";
+                commenttext.style.cols = "100";
+                commenttext.style.wordWrap = "hard";
+                commenttext.style.wordBreak = "break-all";
+                commenttext.maxLength = "150";
+                commenttext.innerHTML = "在这里输入评论";
+                commenttext.id = "commenttext";
+                question1.appendChild(commenttext);//11
+                var commentbtn = document.createElement("input");
+                commentbtn.type = "button";
+                commentbtn.id = "commentbtn";
+                commentbtn.value = "提交评论";
+                question1.appendChild(commentbtn);//12
+                commentbtn.onclick = function () {
+                    endcomment(this);
+                };
+            }
+
+        }
+        function endcomment(commentbtn) {
+            check = 0;
+            var question1 = commentbtn.parentNode;
+            question1.value = parseInt(question1.value) + 1;
+            var commenttext = question1.childNodes[11];
+            alert("评论提交成功！");
+            var height = question1.clientHeight - 200 - parseInt(question1.childNodes[10].clientHeight);
+            question1.style.height = height + "px";
+            question1.removeChild(question1.childNodes[10]);
+            question1.removeChild(question1.childNodes[10]);
+            question1.removeChild(question1.childNodes[10]);
+        }
+        function commentgettest(comment) {
+            var discuss = JSON.parse(com);
+            alert(discuss);
+            var othercomment = document.createElement('div');
+            var question1 = comment.parentNode;//10
+            question1.appendChild(othercomment);
+            for (var i = 0; i < discuss.length; i++) {
+                var discuss1 = document.createElement('div');
+                discuss1.id = "discuss";
+                othercomment.appendChild(discuss1);
+                var name = document.createElement('p');
+                name.innerHTML = discuss[i].Name;
+                name.id = "name";
+                var image = document.createElement('img');
+                image.src = discuss[i].ImagePath;
+                var date = document.createElement('p');
+                date.innerHTML = discuss[i].Date;
+                date.id = "date";
+                var hr = document.createElement('hr');
+                hr.id = "hr1";
+                var contentdiv = document.createElement('div');
+                contentdiv.id = "contentdiv1";
+                var content = document.createElement('p');
+                content.innerHTML = discuss[i].Content;
+                content.id = "content1";
+                contentdiv.appendChild(content);
+                discuss1.appendChild(image);//0
+                discuss1.appendChild(name);//1
+                discuss1.appendChild(date);//2
+                discuss1.appendChild(hr);//3
+                discuss1.appendChild(contentdiv);//4
+            }
+            var hr = document.createElement('hr');
+            hr.id = "hr2";
+            othercomment.appendChild(hr);
+        }
+        //testend
+        function get() {
+            var xmlhttp = new XMLHttpRequest();
+            xmlhttp.onreadystatechange = function () {
+                if (xmlhttp.readyState == 4) {
+                    if (xmlhttp.status >= 200 && xmlhttp.status < 300) {
+                        var data = xmlhttp.responseText;
+                        var question = JSON.parse(data);
+                        if (question["Status"] == 200) {
+                            // -----------------------------导航栏----------------------------
+                            var name = document.createElement('li');
+                            name.classList.add("name");
+                            name.innerHTML = localStorage.getItem("Name");
+                            var a = document.body.childNodes[3].childNodes[1].childNodes[11].childNodes[0];
+                            a.href = "../Center/user.html";
+                            var img = document.createElement('img');
+                            img.src = localStorage.getItem("ImagePath");
+                            img.classList.add("image");
+                            a.appendChild(img);
+                            console.log(document.body.childNodes[3].childNodes[1]);
+                            document.body.childNodes[3].childNodes[1].insertBefore(name, document.body.childNodes[3].childNodes[1].childNodes[11]);
+                            // document.body.childNodes[1].childNodes[1].appendChild(a);
+
+                            // ---------------------------------------------------------------
+                            var question = question["Post"];
+                            for (var i = 0; i < question.length; i++) {
+                                var question1 = document.createElement('div');
+                                question1.id = "question";
+                                question1.className = "question";
+                                var name = document.createElement('p');
+                                name.innerHTML = question[i].Name;
+                                name.id = "name";
+                                var image = document.createElement('img');
+                                image.src = question[i].ImagePath;
+                                var date = document.createElement('p');
+                                date.innerHTML = question[i].Date;
+                                date.id = "date";
+                                var hr = document.createElement('hr');
+                                var title = document.createElement('p');
+                                title.innerHTML = question[i].Title;
+                                title.id = "title";
+                                var contentdiv = document.createElement('div');
+                                contentdiv.id = "contentdiv";
+                                var content = document.createElement('p');
+                                content.innerHTML = question[i].Content;
+                                content.id = "content";
+                                contentdiv.appendChild(content);
+                                var btn = document.createElement('input');
+                                btn.type = "button";
+                                btn.value = "展开全文...";
+                                btn.id = "btn";
+                                btn.onclick = function () {
+                                    extend(this);
+                                };
+                                var like = document.createElement('input');
+                                like.type = "button";
+                                like.value = "  " + question[i].Like;
+                                like.id = "like";
+                                like.name = question[i].ID;
+                                like.onclick = function () {
+                                    likepost(this);
+                                };
+                                var favor = document.createElement('input');
+                                favor.type = "button";
+                                favor.value = "  " + question[i].Favor;
+                                favor.id = "favor";
+                                favor.name = question[i].ID;
+                                favor.onclick = function () {
+                                    favorpost(this);
+                                };
+                                var comment = document.createElement('input');
+                                comment.type = "button";
+                                comment.value = "  " + question[i].Comment;
+                                comment.id = "comment";
+                                comment.name = question[i].ID;
+                                comment.onclick = function () {
+                                    commentget(this);
+                                }
+                                var container = document.getElementById('container');
+                                container.appendChild(question1);
+                                question1.appendChild(image);//0
+                                question1.appendChild(name);//1
+                                question1.appendChild(date);//2
+                                question1.appendChild(favor);//3
+                                question1.appendChild(like);//4
+                                question1.appendChild(comment);//5
+                                question1.appendChild(hr);//6
+                                question1.appendChild(title);//7
+                                question1.appendChild(contentdiv);//8
+                                question1.appendChild(btn);//9
+                            }
+                        }
+                        else {
+                            alert(jsonResponse["Msg"]);
+                        }
+                    }
+                    else
+                        alert("网络不稳定，请重试！");
+                }
+            };
+            xmlhttp.open("get", "./strategyForum.jsp", true);
+            xmlhttp.send(null);
+        }
+
+        function commentget(comment) {
+            if (check == 0) {
+                check = 1;
+                var xmlhttp = new XMLHttpRequest();
+                xmlhttp.onreadystatechange = function () {
+                    if (xmlhttp.readyState == 4) {
+                        if (xmlhttp.status >= 200 && xmlhttp.status < 300) {
+                            var data = xmlhttp.responseText;
+                            var jsonResponse = JSON.parse(data);
+                            if (jsonResponse["Status"] == 200) {
+                                var discuss = jsonResponse["Comments"];
+                                var othercomment = document.createElement('div');
+                                var question1 = comment.parentNode;
+                                question1.appendChild(othercomment);//10
+                                othercomment.id = "othercomment";
+                                for (var i = 0; i < discuss.length; i++) {
+                                    var discuss1 = document.createElement('div');
+                                    discuss1.id = "discuss";
+                                    othercomment.appendChild(discuss1);
+                                    var name = document.createElement('p');
+                                    name.innerHTML = discuss[i].Name;
+                                    name.id = "name";
+                                    var image = document.createElement('img');
+                                    image.src = discuss[i].ImagePath;
+                                    var date = document.createElement('p');
+                                    date.innerHTML = discuss[i].Date;
+                                    date.id = "date";
+                                    var hr = document.createElement('hr');
+                                    hr.id = "hr1";
+                                    var contentdiv = document.createElement('div');
+                                    contentdiv.id = "contentdiv1";
+                                    var content = document.createElement('p');
+                                    content.innerHTML = discuss[i].Content;
+                                    content.id = "content1";
+                                    contentdiv.appendChild(content);
+                                    discuss1.appendChild(image);//0
+                                    discuss1.appendChild(name);//1
+                                    discuss1.appendChild(date);//2
+                                    discuss1.appendChild(hr);//3
+                                    discuss1.appendChild(contentdiv);//4
+                                }
+                                if (discuss.length != 0) {
+                                    var hr = document.createElement('hr');
+                                    hr.id = "hr2";
+                                    othercomment.appendChild(hr);
+                                }
+                                var height = parseInt(question1.clientHeight) + 160 + parseInt(question1.children[10].clientHeight);
+                                question1.style.height = height + "px";
+                                var commenttext = document.createElement('textarea');
+                                commenttext.style.rows = "6";
+                                commenttext.style.cols = "100";
+                                commenttext.style.wordWrap = "hard";
+                                commenttext.style.wordBreak = "break-all";
+                                commenttext.maxLength = "150";
+                                commenttext.innerHTML = "在这里输入评论";
+                                commenttext.id = "commenttext";
+                                question1.appendChild(commenttext);//11
+                                var commentbtn = document.createElement("input");
+                                commentbtn.type = "button";
+                                commentbtn.id = "commentbtn";
+                                commentbtn.name = comment.name;
+                                commentbtn.value = "提交评论";
+                                question1.appendChild(commentbtn);//12
+                                commentbtn.onclick = function () {
+                                    commentpost(this);
+                                };
+                            }
+                            else {
+                                alert(jsonResponse["Msg"]);
+                            }
+                        }
+                        else
+                            alert("网络不稳定，请重试！");
+                    }
+                };
+                xmlhttp.open("get", "./strategyComments1.jsp?ID=" + comment.name, true);
+                xmlhttp.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+                xmlhttp.send(null);
+            }
+        }
+        function likepost(like) {
+            var param = "ID=" + parseInt(like.name);
+            var xmlhttp = new XMLHttpRequest();
+            xmlhttp.onreadystatechange = function () {
+                if (xmlhttp.readyState == 4) {
+                    if (xmlhttp.status >= 200 && xmlhttp.status < 300) {
+                        var data = xmlhttp.responseText;
+                        var jsonResponse = JSON.parse(data);
+                        if (jsonResponse["Status"] == 200) {//提交成功就+1
+                            like.style.background = "url(../images/like.png) no-repeat";
+                            like.style.backgroundSize = "40px 40px";
+                            var i = parseInt(like.value) + 1;
+                            like.value = i;
+
+                        } else {
+                            alert(jsonResponse["Msg"]);
+                        }
+                    }
+                    else
+                        alert("网络不稳定，请重试！");
+                }
+            };
+            xmlhttp.open("post", "./strategyLike.jsp", true);
+            xmlhttp.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+            xmlhttp.send(param);
+        }
+        function favorpost(favor) {
+            var param = "Name=" + localStorage.getItem("Name") + "&ID=" + parseInt(favor.name);
+            var xmlhttp = new XMLHttpRequest();
+            xmlhttp.onreadystatechange = function () {
+                if (xmlhttp.readyState == 4) {
+                    if (xmlhttp.status >= 200 && xmlhttp.status < 300) {
+                        var data = xmlhttp.responseText;
+                        var jsonResponse = JSON.parse(data);
+                        if (jsonResponse["Status"] == 200) {//提交成功就+1
+                            favor.style.background = "url(../images/favor.png) no-repeat";
+                            favor.style.backgroundSize = "40px 40px";
+                            var i = parseInt(favor.value) + 1;
+                            favor.value = i;
+
+                        } else {
+                            alert(jsonResponse["Msg"]);
+                        }
+                    }
+                    else
+                        alert("网络不稳定，请重试！");
+                }
+            };
+            xmlhttp.open("post", "./strategyFavor.jsp", true);
+            xmlhttp.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+            xmlhttp.send(param);
+        }
+        function commentpost(commentbtn) {
+            var question1 = commentbtn.parentNode;
+            question1.value = parseInt(question1.value) + 1;
+            var commenttext = question1.childNodes[11];
+            var param = "ID=" + parseInt(commentbtn.name) + "&Name=" + localStorage.getItem("Name") + "&Content=" + commenttext.value;
+            var xmlhttp = new XMLHttpRequest();
+            xmlhttp.onreadystatechange = function () {
+                if (xmlhttp.readyState == 4) {
+                    if (xmlhttp.status >= 200 && xmlhttp.status < 300) {
+                        var data = xmlhttp.responseText;
+                        var jsonResponse = JSON.parse(data);
+                        if (jsonResponse["Status"] == 200) { //提交成功就+1
+                            alert("评论提交成功!");
+                            check = 0;
+                            var height = question1.clientHeight - 200 - parseInt(question1.childNodes[10].clientHeight);
+                            question1.style.height = height + "px";
+                            question1.removeChild(question1.childNodes[10]);
+                            question1.removeChild(question1.childNodes[10]);
+                            question1.removeChild(question1.childNodes[10]);
+                            var comment = question1.childNodes[5];
+                            var i = parseInt(comment.value) + 1;
+                            comment.value = "  " + i;
+                        } else {
+                            alert(jsonResponse["Msg"]);
+                        }
+                    }
+                    else
+                        alert("网络不稳定，请重试！");
+                }
+            };
+            xmlhttp.open("post", "./strategyComments2.jsp", true);
+            xmlhttp.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+            xmlhttp.send(param);
+        }
+        function buttondisplay() {
+            var question1 = document.getElementsByClassName("question");
+            for (var i = 0; i < question1.length; i++) {
+                var contentdiv = question1[i].childNodes[8];
+                var btn = question1[i].childNodes[9];
+                var total_height = contentdiv.scrollHeight;
+                var show_height = 150;
+                if (total_height <= show_height)
+                    btn.style.display = "none";
+            }
+        }
+        function extend(btn) {
+            var contentdiv = btn.parentNode.childNodes[8];
+            var question1 = btn.parentNode;
+            var height = question1.clientHeight + contentdiv.scrollHeight - 150;
+            contentdiv.style.height = contentdiv.scrollHeight + "px";
+            question1.style.height = height + "px";
+            btn.style.display = 'none';
+        }
+        //window.onload = getInfo();
+        window.onload = get();
+        window.onload = buttondisplay();
+    </script>
+</body>
+</html>

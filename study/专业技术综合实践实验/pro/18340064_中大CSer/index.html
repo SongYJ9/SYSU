@@ -1,0 +1,94 @@
+<!DOCTYPE  html>
+<html  lang="utf-8">
+<head>
+    <meta charset="utf-8">
+    <title>中大 CSer</title>
+    <link rel="stylesheet" type="text/css" href="css/awesome/font-awesome.css" />
+    <link rel="stylesheet" type="text/css" href="index.css" />
+
+    <script>
+        function login() {
+            var Name = document.getElementById("Name"), Password = document.getElementById("Password");
+            var Identity = document.getElementsByName("Identity")[1].checked ? true : false;
+            // 输入为空怎么不向后端发送数据
+            if (Name.value == "" || Password.value == "" 
+                || !(document.getElementsByName("Identity")[0].checked 
+                || document.getElementsByName("Identity")[1].checked) ) return;
+            
+
+            // console.log(Name.value);
+            // console.log(Password.value);
+            // console.log(Identity.toString());
+            var param = "Name=" + encodeURIComponent(Name.value) + "&Password=" + Password.value + "&Identity=" + Identity;
+            
+            var xmlhttp = new XMLHttpRequest();
+            xmlhttp.onreadystatechange = function() {
+                if (xmlhttp.readyState == 4) {
+                    if (xmlhttp.status >= 200 && xmlhttp.status < 300) {
+                        var data = xmlhttp.responseText;
+                        var jsonResponse = JSON.parse(data);
+                        if (jsonResponse["Status"] == 200) {
+                            localStorage.setItem("Name", Name.value);
+                            // 页面跳转
+                            if (Identity) {
+                                window.location.href='Center/admin.html';
+                            } else {
+                                window.location.href='Center/user.html';
+                            }
+                        } 
+                        else {
+                            alert(jsonResponse["Msg"]);
+                        }
+                    }
+                    else
+                        alert("网络不稳定，请重试！");
+                }
+            };
+            xmlhttp.open("post", "./login.jsp", true);
+            xmlhttp.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+            xmlhttp.send(param);
+        }
+        
+        // 页面加载完后触发
+        window.onload = function setValue() {
+            document.getElementById("Name").value = getQueryVariable("Name");
+            if (getQueryVariable("Identity") == "common") {
+                document.getElementsByName("Identity")[0].checked = true;
+            } else if (getQueryVariable("Identity") == "admin"){
+                document.getElementsByName("Identity")[1].checked = true;
+            }
+        }
+
+        // js 获取 get 请求的 url 参数
+        function getQueryVariable(variable) {
+            var query = window.location.search.substring(1);
+            var vars = query.split("&");
+            for (var i = 0; i < vars.length; i++) {
+                var pair = vars[i].split("=");
+                if (pair[0] == variable) return pair[1];
+            }
+            return("");
+        }
+    </script>
+</head>
+
+<body>
+    <div class="login-box">
+        <p>中大 CSer</p>
+        <div class="row-box">
+            <i class="fa fa-user fa-1g logo"></i>
+            <input class="input-box" type="text" id="Name" name="Name" placeholder="用户名" required="required"/>
+        </div>
+        <div class="row-box">
+            <i class="fa fa-key fa-1g logo"></i>
+            <input class="input-box" type="password" id="Password" placeholder="密码" required="required"/>
+        </div>
+        <br>
+        <input type="radio" name="Identity" value="common" required="required">用户
+        <input type="radio" name="Identity" value="admin" required="required">管理员
+        <br>
+
+        <input class="login" type="submit" name="Login" value="登录" onclick="login()">
+    </div>
+</body>
+</html>

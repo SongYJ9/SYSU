@@ -1,0 +1,152 @@
+@import url("../css/nav.css");
+.left-wrapper {
+    border: 1px solid #F8F5F5;
+    box-shadow: 0px 3px 6px #C095F8;
+    border-radius: 15px;
+    width: 300px;
+    height: 450px;
+    position: fixed;
+    float: left;
+    margin-top: 100px;
+    margin-left: 80px;
+}
+.userImage {
+    position: relative;
+    border-radius: 50% 50%;
+    width: 150px;
+    height: 150px;
+    margin-top: 20px;
+}
+#userInfo {
+    position: relative;
+}
+#userInfo p{
+    /* padding: 5px; */
+    font-size: large;
+    font-family: '微软雅黑';
+    color: #6526B5;
+    /* line-height: 1.5em; */
+    /* text-align: left;
+    margin-left: 100px; */
+}
+#userInfo li {
+    list-style-type: none;
+}
+#right-wrapper {
+    float: right;
+    margin-right: 90px;
+}
+.post {
+    margin-top: 70px; 
+    border: 1px solid #797979;
+    width: 700px;
+    height: 250px;
+}
+.postTitle{
+    font-size: large;
+    font-family: '微软雅黑';
+    color: #2A0559;
+    text-align: left;
+    margin-left: 30px;
+    margin-top: 20px;
+}
+.postText{
+    font-size: large;
+    font-family: '微软雅黑';
+    color: #2A0559;
+    padding: 30px;
+    text-align: left;
+}
+.action {
+    margin-left: 20px;
+    width: 700px;
+    height: 50px;
+}
+.postLogo {
+    margin: 10px;
+    font-size: medium;
+    float: left;
+    color: #727272;
+}
+.Color {
+    color: #2A0559;
+}
+.click {
+    color: #590DB9;
+}
+.date {
+    float: right;
+    font-size: medium;
+    margin-right: 40px;
+    font-family: '微软雅黑';
+    /* font-weight: bold; */
+}
+.comment {
+    width: 700px;
+    height: 200px;
+    margin-top: 10px;
+}
+.commentHeader {
+    width: 700px;
+    height: 60px;
+}
+.commentImage {
+    border-radius: 50% 50%;
+    width: 50px;
+    height: 50px;
+    float: left;
+    margin-left: 30px;
+    margin-top: 5px;
+}
+.commentName {
+    color: #2A0559;
+    font-size: medium;
+    font-family: '微软雅黑';
+    float: left;
+    margin-left: 10px;
+    margin-top: 20px;
+}
+.commentText {
+    color: #2A0559;
+    font-size: medium;
+    font-family: '微软雅黑';
+    text-align: left;
+    padding: 23px;
+}
+#post {
+    float: none;
+    left: 0px;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    position: fixed;
+    display: none;
+    margin: auto;
+    width: 800px;
+    height: 400px;
+    border: 1px solid #797979;
+    background-color: #FFFFFF;
+    border-radius: 5px;
+    border: 1px solid #797979;
+    box-shadow: 0px 3px 6px #5f5f5f;
+    z-index: 100;
+}
+#X {
+    margin-left:770px;
+    position: fixed;
+    width:30px;
+}
+.btn{
+    width:130px;
+    height: 35px;
+    background-color: transparent;
+    color: #AEA5B9;
+    font-size: medium;
+    font-family: '微软雅黑';
+    border-color: transparent;
+}
+.lastli{
+    position: absolute;
+    float:right;
+    right:-300px;
+}

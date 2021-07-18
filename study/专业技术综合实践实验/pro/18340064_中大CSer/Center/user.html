@@ -1,0 +1,469 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>User center</title>
+    <link rel="stylesheet" type="text/css" href="../css/awesome/font-awesome.css" />
+    <link rel="stylesheet" type="text/css" href="./user.css" />
+</head>
+
+<body>
+    <div id="post">
+        <input id="X" type="button" onclick="close1(this)" value="X">
+        <iframe id="ifr" frameborder="0" width="800" height="400" src=""></iframe>
+    </div>
+    <div id="nav_outer">
+        <ul class="wrapper" id="nav">
+            <li class="CSer" style="color: #FFFFFF; ">中大CSer</li>
+            <li><a href="../Guide/c.html">指南</a></li>
+            <li><a href="../Resources/resources.html">资源</a></li>
+            <li><a href="#">资讯</a><i class="fa fa-caret-down logo"></i>
+                <ul class="subnav">
+                    <li><a href="../Info/matchInfo.html">比赛</a></li>
+                    <li><a href="../Info/jobInfo.html">招聘</a></li>
+                </ul>
+            </li>
+            <li><a href="#">论坛</a><i class="fa fa-caret-down logo"></i>
+                <ul class="subnav">
+                    <li><a href="../Forum/questionForum.html">问题</a></li>
+                    <li><a href="../Forum/strategyForum.html">攻略</a></li>
+                </ul>
+            </li>
+            <li class="lastli"><a href="#"></a>
+                <ul class="subnav">
+                    <li><a><input class="btn" type="button" value="发布攻略帖" onclick="window1(1)"></a></li>
+                    <li><a><input class="btn" type="button" value="发布问题贴" onclick="window1(2)"></a></li>
+                    <li><a><input class="btn" type="button" value="发布资源" onclick="window1(3)"></a></li>
+                    <li><a><input class="btn" type="button" value="发布比赛资讯" onclick="window1(4)"></a></li>
+                    <li><a><input class="btn" type="button" value="发布招聘资讯" onclick="window1(5)"></a></li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+    <script>
+        function window1(i) {
+            
+            var post = document.getElementById("post");
+            var container = post.parentNode;
+            // console.log(container.style.backgroundColor);
+            var ifr = document.getElementById("ifr");
+            container.style.backgroundColor = "gray";
+            container.style.opacity = "80%";
+            if (i == 1)//发帖
+                ifr.src = "../post/strategyPost.html";
+            else if (i == 2)//发帖
+                ifr.src = "../post/problemPost.html";
+            else if (i == 3)//资源
+                ifr.src = "../post/resourceUpload.jsp";
+            else if (i == 4)//资讯
+                ifr.src = "../post/matchPost.html";
+            else if (i == 5)//资讯
+                ifr.src = "../post/jobPost.html";
+            post.style.display = "block";
+        }
+        function close1(btn) {
+            var post = btn.parentNode;
+            post.style.display = "none";
+            var container = btn.parentNode.parentNode;
+            console.log(container);
+            container.style.backgroundColor = "transparent";
+            container.style.opacity = 1.0;
+            // container.removeAttr("style.")
+        }
+        var data = JSON.stringify({"Status":200, "Msg": "success", "ImagePath": "../images/user/user.png",
+                                    "Contribution": 22, "Submit": 13, "Pass":62, "Download": 12, "Favor":10,
+                                    "Post":[
+                                        {
+                                        "Title":"好难",
+                                        "Content":"好难好难好难好难好难好难好难好难好难好难好难好难好难好难好难\
+                                                    好难好难好难好难好难好难好难好难好难好难好难好难好难好难好难\
+                                                    好难好难好难好难好难好难好难好难好难好难好难好难好难好难好难",
+                                        "Date":"2021.12.1",
+                                        "Comment": 12,
+                                        "Like": 13,
+                                        "Favor": 2,
+                                        "ID": 1,
+                                        "Type": "Question"
+                                        },
+
+                                        {
+                                        "Title":"好难",
+                                        "Content":"好难好难好难好难好难好难好难好难好难好难好难好难好难好难好难\
+                                                    好难好难好难好难好难好难好难好难好难好难好难好难好难好难好难\
+                                                    好难好难好难好难好难好难好难好难好难好难好难好难好难好难好难",
+                                        "Date":"2021.12.1",
+                                        "Comment": 14,
+                                        "Like": 15,
+                                        "Favor": 6,
+                                        "ID": 2,
+                                        "Type": "Question"
+                                        },
+
+                                        {
+                                        "Title":"好难",
+                                        "Content":"好难好难好难好难好难好难好难好难好难好难好难好难好难好难好难\
+                                                    好难好难好难好难好难好难好难好难好难好难好难好难好难好难好难\
+                                                    好难好难好难好难好难好难好难好难好难好难好难好难好难好难好难",
+                                        "Date":"2021.12.1",
+                                        "Comment": 17,
+                                        "Like": 19,
+                                        "Favor": 21,
+                                        "ID": 3,
+                                        "Type": "Question"
+                                        },
+                                    ]});
+
+        function testGetInfo() {
+            var jsonResponse = JSON.parse(data);
+            if (jsonResponse["Status"] == 200) {
+                // -----------------------------导航栏----------------------------
+                var name = document.createElement('li');
+                name.classList.add("name");
+                name.innerHTML = "wongsiyoung";
+                var a = document.createElement('a');
+                a.href = "../Center/user.html";
+                var img = document.createElement('img');
+                img.src = jsonResponse["ImagePath"];
+                localStorage.setItem("ImagePath",jsonResponse["ImagePath"]);
+                img.classList.add("image");
+                a.appendChild(img);
+                document.body.childNodes[1].childNodes[1].appendChild(name);
+                document.body.childNodes[1].childNodes[1].appendChild(a);
+                
+                // -----------------------------body 左侧栏---------------------------
+                var main_outer = document.createElement('div');
+                main_outer.setAttribute("id", "main_outer");
+                var left_wrapper = document.createElement('div');
+                left_wrapper.classList.add("left-wrapper");
+
+                var div1 = document.createElement('div');
+                var bigImg = document.createElement('img');
+                bigImg.src = jsonResponse["ImagePath"];
+                bigImg.classList.add("userImage");
+                div1.appendChild(bigImg);
+
+                var div2 = document.createElement('div');
+                div2.setAttribute("id", "userInfo");
+                var li1 = document.createElement('li');
+                var p1 = document.createElement('p');
+                p1.innerHTML = "wongsiyoung";
+                li1.appendChild(p1);
+                
+
+                var li2 = li1.cloneNode(true);
+                li2.childNodes[0].innerHTML = "贡献：" + jsonResponse["Contribution"];
+                var li3 = li1.cloneNode(true);
+                li3.childNodes[0].innerHTML = "提交：" + jsonResponse["Submit"];
+                var li4 = li1.cloneNode(true);
+                li4.childNodes[0].innerHTML = "通过：" + jsonResponse["Pass"];
+                var li5 = li1.cloneNode(true);
+                li5.childNodes[0].innerHTML = "下载：" + jsonResponse["Download"];
+                var li6 = li1.cloneNode(true);
+                li6.childNodes[0].innerHTML = "收藏：" + jsonResponse["Favor"];
+
+                div2.appendChild(li1);
+                div2.appendChild(li2);
+                div2.appendChild(li3);
+                div2.appendChild(li4);
+                div2.appendChild(li5);
+                div2.appendChild(li6);
+                
+                left_wrapper.appendChild(div1);
+                left_wrapper.appendChild(div2);
+
+                
+                // ----------------------------------- body 右侧栏 ---------------------------
+                var Posts = jsonResponse["Post"];
+                var right_wrapper = document.createElement('div');
+                right_wrapper.setAttribute("id", "right-wrapper");
+                    for(let i = 0; i < Posts.length; i++) {
+                        var post = document.createElement('div');
+                        post.classList.add("post");
+                            var div1 = document.createElement("div");
+                                var p1 = document.createElement("p");
+                                p1.classList.add("postTitle");
+                                p1.innerHTML = Posts[i]["Title"];
+                                var id = document.createElement("span");
+                                id.setAttribute("hidden", true);
+                                id.innerHTML = Posts[i]["ID"];
+                            div1.appendChild(p1);
+                            div1.appendChild(id);
+
+                            var div2 = document.createElement("div");
+                                var p2 = document.createElement("p");
+                                p2.classList.add("postText");
+                                p2.innerHTML = Posts[i]["Content"];
+                            div2.appendChild(p2);
+
+                            var div3 = document.createElement("div");
+                            div3.classList.add("action");
+                                var i1 = document.createElement("i");
+                                i1.classList.add("fa");
+                                i1.classList.add("fa-thumbs-up");
+                                i1.classList.add("postLogo");
+                                var span1 = document.createElement("span");
+                                span1.classList.add("postLogo");
+                                span1.classList.add("click");
+                                span1.innerHTML = Posts[i]["Like"];
+
+                                var i2 = document.createElement("i");
+                                i2.classList.add("fa");
+                                i2.classList.add("fa-commenting");
+                                i2.classList.add("postLogo");
+                                i2.setAttribute("onclick", "comment()");
+                                var span2 = document.createElement("span");
+                                span2.classList.add("postLogo");
+                                span2.classList.add("click");
+                                span2.innerHTML = Posts[i]["Comment"];
+
+                                var i3 = document.createElement("i");
+                                i3.classList.add("fa");
+                                i3.classList.add("fa-star");
+                                i3.classList.add("postLogo");
+                                var span3 = document.createElement("span");
+                                span3.classList.add("postLogo");
+                                span3.classList.add("click");
+                                span3.innerHTML = Posts[i]["Favor"]; 
+                            
+                                var span4 = document.createElement("span");
+                                span4.classList.add("date");
+                                span4.classList.add("Color");
+                                span4.innerHTML = Posts[i]["Date"];
+                            div3.appendChild(i1);
+                            div3.appendChild(span1);
+                            div3.appendChild(i2);
+                            div3.appendChild(span2);
+                            div3.appendChild(i3);
+                            div3.appendChild(span3);
+                            div3.appendChild(span4);
+                        post.appendChild(div1);
+                        post.appendChild(div2);
+                        post.appendChild(div3);
+                    right_wrapper.appendChild(post);
+                    
+                    }
+
+                    main_outer.appendChild(left_wrapper);
+                    main_outer.appendChild(right_wrapper);
+                    document.body.appendChild(main_outer);
+            } else {
+                alert(jsonResponse["Msg"]);
+            }
+        }
+
+        function getInfo() {
+                var Name = localStorage.getItem("Name");
+                var param = "Name=" + Name;
+                var xmlhttp = new XMLHttpRequest();
+                xmlhttp.onreadystatechange = function() {
+                    if (xmlhttp.readyState == 4) {
+                        if (xmlhttp.status >= 200 && xmlhttp.status < 300 ) {
+                            var data = xmlhttp.responseText;
+                            var jsonResponse = JSON.parse(data);
+                            if (jsonResponse["Status"] == 200) {
+                                // -----------------------------导航栏----------------------------
+                                var name = document.createElement('li');
+                                name.classList.add("name");
+                                name.innerHTML = localStorage.getItem("Name");
+                                var a = document.body.childNodes[3].childNodes[1].childNodes[11].childNodes[0];
+                                a.href = "../Center/user.html";
+                                var img = document.createElement('img');
+                                img.src = jsonResponse["ImagePath"];
+                                localStorage.setItem("ImagePath", jsonResponse["ImagePath"]);
+                                img.classList.add("image");
+                                a.appendChild(img);
+                                console.log(document.body.childNodes[3].childNodes[1]);
+                                document.body.childNodes[3].childNodes[1].insertBefore(name, document.body.childNodes[3].childNodes[1].childNodes[11]);
+                                // document.body.childNodes[1].childNodes[1].appendChild(a);
+                                
+                                //-----------------------------body 左侧栏---------------------------
+                                var main_outer = document.createElement('div');
+                                main_outer.setAttribute("id", "main_outer");
+                                var left_wrapper = document.createElement('div');
+                                left_wrapper.classList.add("left-wrapper");
+
+                                var div1 = document.createElement('div');
+                                var bigImg = document.createElement('img');
+                                bigImg.src = jsonResponse["ImagePath"];
+                                bigImg.classList.add("userImage");
+                                div1.appendChild(bigImg);
+
+                                var div2 = document.createElement('div');
+                                div2.setAttribute("id", "userInfo");
+                                var li1 = document.createElement('li');
+                                var p1 = document.createElement('p');
+                                p1.innerHTML = localStorage.getItem("Name");
+                                li1.appendChild(p1);
+                                
+
+                                var li2 = li1.cloneNode(true);
+                                li2.childNodes[0].innerHTML = "贡献：" + jsonResponse["Contribution"];
+                                var li3 = li1.cloneNode(true);
+                                li3.childNodes[0].innerHTML = "提交：" + jsonResponse["Submit"];
+                                var li4 = li1.cloneNode(true);
+                                li4.childNodes[0].innerHTML = "通过：" + jsonResponse["Pass"];
+                                var li5 = li1.cloneNode(true);
+                                li5.childNodes[0].innerHTML = "下载：" + jsonResponse["Download"];
+                                var li6 = li1.cloneNode(true);
+                                li6.childNodes[0].innerHTML = "收藏：" + jsonResponse["Favor"];
+
+                                div2.appendChild(li1);
+                                div2.appendChild(li2);
+                                div2.appendChild(li3);
+                                div2.appendChild(li4);
+                                div2.appendChild(li5);
+                                div2.appendChild(li6);
+                                
+                                left_wrapper.appendChild(div1);
+                                left_wrapper.appendChild(div2);
+
+                                
+                                // ----------------------------------- body 右侧栏 ---------------------------
+                                var Posts = jsonResponse["Post"];
+                                var right_wrapper = document.createElement('div');
+                                right_wrapper.setAttribute("id", "right-wrapper");
+                                    for(let i = 0; i < Posts.length; i++) {
+                                        var post = document.createElement('div');
+                                        post.classList.add("post");
+                                            var div1 = document.createElement("div");
+                                                var p1 = document.createElement("p");
+                                                p1.classList.add("postTitle");
+                                                p1.innerHTML = Posts[i]["Title"];
+                                                var id = document.createElement("span");
+                                                id.setAttribute("hidden", true);
+                                                id.innerHTML = Posts[i]["ID"];
+                                            div1.appendChild(p1);
+                                            div1.appendChild(id);
+
+                                            var div2 = document.createElement("div");
+                                                var p2 = document.createElement("p");
+                                                p2.classList.add("postText");
+                                                p2.innerHTML = Posts[i]["Content"];
+                                            div2.appendChild(p2);
+
+                                            var div3 = document.createElement("div");
+                                            div3.classList.add("action");
+                                                var i1 = document.createElement("i");
+                                                i1.classList.add("fa");
+                                                i1.classList.add("fa-thumbs-up");
+                                                i1.classList.add("postLogo");
+                                                var span1 = document.createElement("span");
+                                                span1.classList.add("postLogo");
+                                                span1.classList.add("click");
+                                                span1.innerHTML = Posts[i]["Like"];
+
+                                                var i2 = document.createElement("i");
+                                                i2.classList.add("fa");
+                                                i2.classList.add("fa-commenting");
+                                                i2.classList.add("postLogo");
+                                                i2.setAttribute("onclick", "comment()");
+                                                var span2 = document.createElement("span");
+                                                span2.classList.add("postLogo");
+                                                span2.classList.add("click");
+                                                span2.innerHTML = Posts[i]["Comment"];
+
+                                                var i3 = document.createElement("i");
+                                                i3.classList.add("fa");
+                                                i3.classList.add("fa-star");
+                                                i3.classList.add("postLogo");
+                                                var span3 = document.createElement("span");
+                                                span3.classList.add("postLogo");
+                                                span3.classList.add("click");
+                                                span3.innerHTML = Posts[i]["Favor"]; 
+                                            
+                                                var span4 = document.createElement("span");
+                                                span4.classList.add("date");
+                                                span4.classList.add("Color");
+                                                span4.innerHTML = Posts[i]["Date"];
+                                            div3.appendChild(i1);
+                                            div3.appendChild(span1);
+                                            div3.appendChild(i2);
+                                            div3.appendChild(span2);
+                                            div3.appendChild(i3);
+                                            div3.appendChild(span3);
+                                            div3.appendChild(span4);
+                                        post.appendChild(div1);
+                                        post.appendChild(div2);
+                                        post.appendChild(div3);
+                                    right_wrapper.appendChild(post);
+                                    
+                                    }
+
+                                    main_outer.appendChild(left_wrapper);
+                                    main_outer.appendChild(right_wrapper);
+                                    document.body.appendChild(main_outer);
+                            } else {
+                                alert(jsonResponse["Msg"]);
+                            }
+                        }
+                        else
+                            alert("网络不稳定，请重试！");
+                    }
+                };
+                xmlhttp.open("get", "./userInfo.jsp?Name=" + Name, true);
+                xmlhttp.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+                xmlhttp.send(param);
+        }
+
+        window.onload = getInfo();
+    </script>
+</body>
+</html>
+
+
+
+
+
+    <!-- <div id="main_outer">
+        <div class="left-wrapper">
+            <div><img src="../ImageUrl/user.png" class="userImage"/></div>
+
+            <div id="userInfo">
+                <li><p>wongsiyoung</p></li>
+                <li><p>贡献：22</p></li>
+                <li><p>提交：13</p></li>
+                <li><p>通过：62</p></li>
+                <li><p>下载：12</p></li>
+                <li><p>收藏：10</p></li>
+            </div>
+        </div>
+        <div id="right-wrapper">
+            <div class="post">
+                <div>
+                    <p class="postTitle">好难</p><span hidden>1111</span>
+                </div>
+                <div>
+                    <p class="postText">
+                        计组好难计组好难计组好难计组好难计组好难计组好难计组好难
+                        计组好难计组好难计组好难计组好难计组好难计组好难计组好难
+                        计组好难计组好难计组好难计组好难计组好难计组好难计组好难
+                        计组好难计组好难计组好难计组好难计组好难……
+                    </p>
+                </div>
+
+                <div class="action">
+                    <i class="fa fa-thumbs-up postLogo" onclick="thumbUp()"></i><span class="postLogo">11</span>
+                    <i class="fa fa-commenting postLogo "></i><span class="postLogo">12</span>
+                    <i class="fa fa-star postLogo "></i><span class="postLogo">13</span>
+                    <span class="date Color">2021.12.1</span>
+                </div>
+
+                <div class="comment">
+                    <hr/>
+                    <div class="commentHeader">
+                        <img src="../ImageUrl/user.png" class="commentImage">
+                        <span class="commentName">wongisyoung</span>
+                        <span class="commentName">2021.12.1</span>
+                    </div>
+                    <div>
+                        <p class="commentText">
+                            计组好难计组好难计组好难计组好难计组好难计组好难计组好难
+                            计组好难计组好难计组好难计组好难计组好难计组好难计组好难
+                            计组好难计组好难计组好难计组好难计组好难计组好难计组好难
+                            计组好难计组好难计组好难计组好难计组好难……
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div> -->

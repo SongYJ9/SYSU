@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Slider</title>
+    <style>
+        .box {
+            height: 300px;
+            width: 760px;
+            overflow: hidden;
+            position: relative;
+            margin: auto;
+        }
+        .imageBox {
+            white-space: nowrap;
+			position: relative;
+        }
+        .image {
+            margin-right: -8px;
+        }
+        .arrow {
+            width: 30px;
+            height: 80px;
+            top: 110px;
+            position: absolute;
+            background: url("images/arrows-30.png");
+        }
+        #arrow1 {
+			left: 10px;
+		}
+        #arrow2 {
+            right: 10px;
+            background-position-y: 80px;
+        }
+		.pointBox {
+		    position: absolute;
+		    top: 260px;
+		    right: 60px;
+		    white-space: nowrap;
+		}
+		.point {
+			width: 12px;
+			height: 12px;
+		    display: inline-block;
+		    background: url("images/navigator.png") no-repeat;
+		}
+		#point1 {
+			background-position-y: -24px;
+		}
+    </style>
+</head>
+
+<body>
+    <div class="box" onmousemove="stopArrow()" onmouseout="moveArrow()">
+        <div class="imageBox">
+            <img class="image" id="image1" src="images/img1.jpg">
+            <img class="image" id="image2" src="images/img2.jpg">
+            <img class="image" id="image3" src="images/img3.jpg">
+            <img class="image" id="image4" src="images/img1.jpg">
+        </div>
+        <div class="pointBox">
+            <div class="point" id="point1" onclick="onclickPoint(0)"></div>
+            <div class="point" id="point2" onclick="onclickPoint(1)"></div>
+            <div class="point" id="point3" onclick="onclickPoint(2)"></div>
+        </div>
+        <div class="arrowBox">
+            <div class="arrow" id="arrow1" onclick="onclickArrow(0)"></div>
+            <div class="arrow" id="arrow2" onclick="onclickArrow(1)"></div>
+        </div>
+    </div>
+	<script>
+	    var position = 0, count = 0, flag = true;
+	    var points = document.querySelectorAll(".point");
+	    var arrows = document.querySelectorAll(".arrow");
+	    var images = document.querySelector(".imageBox");
+	    function moveImage() { 
+	        if (flag) { 
+	            position -= 7.7;
+	            count++;
+	            if (position <= -3 * 770)
+	                position = 0;
+	            images.style.left = position + "px";
+	            if (position <= -2 * 770)
+	                changePoint(2);
+	            else if (position <= -770)
+	                changePoint(1);
+	            else
+	                changePoint(0);
+	        }
+	        if (count < 100)
+	            setTimeout("moveImage()", 20);
+	        else {
+	            count = 0;
+	            setTimeout("moveImage()", 2000);
+	        }
+	    }
+		function stopArrow() { 
+	        flag = false;
+	        arrows[0].style.display = arrows[1].style.display = "block";
+	    }
+	    function moveArrow() { 
+	        flag = true;
+	        arrows[0].style.display = arrows[1].style.display = "none";
+	    }
+	    function onclickArrow(i) { 
+	        if (i == 0) {
+	            if (position <= -2 * 770)
+	                position = -770;
+	            else if (position <= -770)
+	                position = 0;
+	            else
+	                position = -2 * 770;
+	        }
+		    else {
+		        if (position <= -2 * 770)
+		            position = 0;
+		        else if (position <= -770)
+		            position = -2 * 770;
+		        else
+		            position = -770;
+		    }
+	        count = 0;
+	        images.style.left = position + "px";
+	        if (position <= -2 * 770)
+	            changePoint(2);
+	        else if (position <= -770)
+	            changePoint(1);
+	        else
+	            changePoint(0);
+	    }
+	    function onclickPoint(i) {
+	        if (i == 0)
+	            position = 0;
+	        else if (i == 1)
+	            position = -770;
+	        else 
+	            position = -2 * 770;
+	        count = 0;
+	        images.style.left = position + "px";
+	        changePoint(i);
+	    }
+	    function changePoint(i) { 
+	        for (j = 0; j < 3; j++) {
+	            if (i == j)
+	                points[j].style.backgroundPositionY = "-24px";
+	            else 
+	                points[j].style.backgroundPositionY = "0px";
+	        }
+	    }
+		function init() {
+			arrows[0].style.display = arrows[1].style.display = "none";
+			moveImage();
+		}
+
+		init();
+	</script>	
+</body>
+
+</html>

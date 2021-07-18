@@ -1,0 +1,24 @@
+<!DOCTYPE  html>
+<html  lang="zh-cn">
+<head>
+  <title>prototype</title>
+  <script>
+  function Stu(name, age, ... arg) {
+    this.name = name;
+    this.age = age;
+    Stu.prototype.major = "Computer";
+    Stu.prototype.toString = function() { 
+      console.log(this.name + "; " + this.age + "; " +  this.major); 
+    };
+  }
+  </script>
+</head>
+<body>
+  <script>
+    var stus = [];
+    for (var i = 0; i < 6; i++) stus.push(new Stu("stu" + i, Math.floor(Math.random() * 3 + 19)));
+    for (var i in stus) stus[i].toString(); 
+  </script>
+</body>
+</html>
+

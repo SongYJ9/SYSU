@@ -1,0 +1,233 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>matchReview</title>
+    <link rel="stylesheet" type="text/css" href="../css/awesome/font-awesome.css" />
+    <link rel="stylesheet" type="text/css" href="./matchReview.css" />
+</head>
+
+<body>
+    <div id="post">
+        <input id="X" type="button" onclick="close1(this)" value="X">
+        <iframe id="ifr" frameborder="0" width="800" height="400" src=""></iframe>
+    </div>
+    <div id="nav_outer">
+        <ul class="wrapper" id="nav">
+            <li class="CSer" style="color: #FFFFFF; ">中大CSer</li>
+            <li><a href="../Guide/Admi-c.html">指南</a></li>
+            <li><a href="../Resources/adminResources.html">资源</a></li>
+            <li><a href="#">资讯</a><i class="fa fa-caret-down logo"></i>
+                <ul class="subnav">
+                    <li><a href="../Info/Admi-matchInfo.html">比赛</a></li>
+                    <li><a href="../Info/Admi-jobInfo.html">招聘</a></li>
+                </ul>
+            </li>
+            <li><a href="#">论坛</a><i class="fa fa-caret-down logo"></i>
+                <ul class="subnav">
+                    <li><a href="../Forum/Admi-questionForum.html">问题</a></li>
+                    <li><a href="../Forum/Admi-strategyForum.html">攻略</a></li>
+                </ul>
+            </li>
+            <li class="lastli"><a href="#"></a>
+                <ul class="subnav">
+                    <li><a><input class="btn" type="button" value="发布攻略帖" onclick="window1(1)"></a></li>
+                    <li><a><input class="btn" type="button" value="发布问题贴" onclick="window1(2)"></a></li>
+                    <li><a><input class="btn" type="button" value="发布资源" onclick="window1(3)"></a></li>
+                    <li><a><input class="btn" type="button" value="发布比赛资讯" onclick="window1(4)"></a></li>
+                    <li><a><input class="btn" type="button" value="发布招聘资讯" onclick="window1(5)"></a></li>
+                    <li><a href="../Info/matchReview.html">审核比赛资讯</a></li>
+                    <li><a href="../Info/jobReview.html">审核招聘资讯</a></li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+    <div id="container">
+    </div>
+    <script>
+        function window1(i) {
+            var post = document.getElementById("post");
+            var container = post.parentNode;
+            var ifr = document.getElementById("ifr");
+            container.style.backgroundColor = "gray";
+            container.style.opacity = "80%";
+            if (i == 1)//发帖
+                ifr.src = "../post/strategyPost.html";
+            else if (i == 2)//发帖
+                ifr.src = "../post/problemPost.html";
+            else if (i == 3)//资源
+                ifr.src = "../post/resourceUpload.jsp";
+            else if (i == 4)//资讯
+                ifr.src = "../post/matchPost.html";
+            else if (i == 5)//资讯
+                ifr.src = "../post/jobPost.html";
+            post.style.display = "block";
+        }
+        function close1(btn) {
+            var post = btn.parentNode;
+            post.style.display = "none";
+            var container = btn.parentNode.parentNode;
+            container.style.backgroundColor = "transparent";
+        }
+        var data = JSON.stringify([{ "ID":0,"Title": '111比赛', "Date": 'XXX.XXX.XXX.XXX', "Deadline": 'XXX.XXX.XXX.XXX', "Member": '3', "Link": 'WWW.abc.com' },
+            { "ID": 1,"Title": '222比赛', "Date": 'XXX.XXX.XXX.XXX', "Deadline": 'XXX.XXX.XXX.XXX', "Member": '3', "Link": 'WWW.abc.com' },
+            { "ID": 2,"Title": '333比赛', "Date": 'XXX.XXX.XXX.XXX', "Deadline": 'XXX.XXX.XXX.XXX', "Member": '3', "Link": 'WWW.abc.com' },
+            { "ID": 3,"Title": '444比赛', "Date": 'XXX.XXX.XXX.XXX', "Deadline": 'XXX.XXX.XXX.XXX', "Member": '3', "Link": 'WWW.abc.com' },
+            { "ID": 4,"Title": '555比赛', "Date": 'XXX.XXX.XXX.XXX', "Deadline": 'XXX.XXX.XXX.XXX', "Member": '3', "Link": 'WWW.abc.com' },
+            { "ID": 5,"Title": '666比赛', "Date": 'XXX.XXX.XXX.XXX', "Deadline": 'XXX.XXX.XXX.XXX', "Member": '3', "Link": 'WWW.abc.com' },
+            { "ID": 6,"Title": '777比赛', "Date": 'XXX.XXX.XXX.XXX', "Deadline": 'XXX.XXX.XXX.XXX', "Member": '3', "Link": 'WWW.abc.com' }]);
+        function testGet() {
+            match = JSON.parse(data);
+            for (var i = 0; i < match.length; i++) {
+                var match1 = document.createElement('div');
+                match1.id = "match";
+                var title = document.createElement('p');
+                title.innerHTML = match[i].Title;
+                var hr = document.createElement('hr');
+                var date = document.createElement('p');
+                date.innerHTML = match[i].Date;
+                var deadline = document.createElement('p');
+                deadline.innerHTML = match[i].Deadline;
+                var member = document.createElement('p');
+                member.innerHTML = match[i].Member;
+                var link = document.createElement('p');
+                link.innerHTML = match[i].Link;
+                var btn1 = document.createElement('input');
+                btn1.type = "submit";
+                btn1.name = "btn1";
+                btn1.id = match[i].ID;
+                btn1.value = "通过";
+                btn1.onclick = function () {
+                    posttest(this, 1);
+                };
+                var btn2 = document.createElement('input');
+                btn2.value = "不通过";
+                btn2.id = match[i].ID;
+                btn2.name = "btn2";
+                btn2.type = "submit";
+                btn2.onclick = function () {
+                    posttest(this, 0);
+                };
+                var container = document.getElementById('container');
+                container.appendChild(match1);
+                match1.appendChild(title);
+                match1.appendChild(hr);
+                match1.appendChild(date);
+                match1.appendChild(deadline);
+                match1.appendChild(member);
+                match1.appendChild(link);
+                match1.appendChild(btn1);
+                match1.appendChild(btn2);
+            }
+        }
+        function posttest(btn, pass) {
+            var container = document.getElementById('container');
+            container.removeChild(btn.parentNode);
+        }
+        function get() {
+            var xmlhttp = new XMLHttpRequest();
+            xmlhttp.onreadystatechange = function () {
+                if (xmlhttp.readyState == 4) {
+                    if (xmlhttp.status >= 200 && xmlhttp.status < 300) {
+                        var data = xmlhttp.responseText;
+                        var match = JSON.parse(data);
+                        if (match["Status"] == 200) {
+                            // -----------------------------导航栏----------------------------
+                            var name = document.createElement('li');
+                            name.classList.add("name");
+                            name.innerHTML = localStorage.getItem("Name");
+                            var a = document.body.childNodes[3].childNodes[1].childNodes[11].childNodes[0];
+                            a.href = "../Center/admin.html";
+                            var img = document.createElement('img');
+                            img.src = localStorage.getItem("ImagePath");
+                            img.classList.add("image");
+                            a.appendChild(img);
+                            console.log(document.body.childNodes[3].childNodes[1]);
+                            document.body.childNodes[3].childNodes[1].insertBefore(name, document.body.childNodes[3].childNodes[1].childNodes[11]);
+                            // document.body.childNodes[1].childNodes[1].appendChild(a);
+                            // ---------------------------------------------------------------
+
+                            match = match["Matches"];
+                            for (var i = 0; i < match.length; i++) {
+                                var match1 = document.createElement('div');
+                                match1.id = "match";
+                                var title = document.createElement('p');
+                                title.innerHTML = match[i].Title;
+                                var hr = document.createElement('hr');
+                                var date = document.createElement('p');
+                                date.innerHTML = "比赛时间：" + match[i].Date;
+                                var deadline = document.createElement('p');
+                                deadline.innerHTML = "截止时间：" + match[i].Deadline;
+                                var member = document.createElement('p');
+                                member.innerHTML = "参赛对象：" + match[i].Member;
+                                var link = document.createElement('p');
+                                link.innerHTML = "详情链接：" + match[i].Link;
+                                var btn1 = document.createElement('input');
+                                btn1.type = "submit";
+                                btn1.name = "btn1";
+                                btn1.id = match[i].ID;
+                                btn1.value = "通过";
+                                btn1.onclick = function () {
+                                    post(this, 1);
+                                };
+                                var btn2 = document.createElement('input');
+                                btn2.value = "不通过";
+                                btn2.id = match[i].ID;
+                                btn2.name = "btn2";
+                                btn2.type = "submit";
+                                btn2.onclick = function () {
+                                    post(this, 0);
+                                };
+                                var container = document.getElementById('container');
+                                container.appendChild(match1);
+                                match1.appendChild(title);
+                                match1.appendChild(hr);
+                                match1.appendChild(date);
+                                match1.appendChild(deadline);
+                                match1.appendChild(member);
+                                match1.appendChild(link);
+                                match1.appendChild(btn1);
+                                match1.appendChild(btn2);
+                            }
+                        } 
+                        else {
+                            alert(match["Msg"]);
+                        }
+                    } 
+                    else
+                        alert("网络不稳定，请重试！");
+                }
+            };
+            xmlhttp.open("get", "./matchReview1.jsp", true);
+            xmlhttp.send(null);
+        }
+
+        function post(btn, pass) {
+            var param = "ID=" + parseInt(btn.id) + "&Name=" + localStorage.getItem("Name") + "&Action=" + pass;
+            var xmlhttp = new XMLHttpRequest();
+            xmlhttp.onreadystatechange = function () {
+                if (xmlhttp.readyState == 4) {
+                    if (xmlhttp.status >= 200 && xmlhttp.status < 300) {
+                        var data = xmlhttp.responseText;
+                        var jsonResponse = JSON.parse(data);
+                        if (jsonResponse["Status"] == 200) { //提交成功就删掉这个资讯不显示？？
+                            alert(jsonResponse["Msg"]);
+                            var container = document.getElementById('container');
+                            container.removeChild(btn.parentNode);
+                        } 
+                        else {
+                            alert(jsonResponse["Msg"]);
+                        }
+                    }
+                    else
+                        alert("网络不稳定，请重试！");
+                }
+            };
+            xmlhttp.open("post", "./matchReview2.jsp", true);
+            xmlhttp.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+            xmlhttp.send(param);
+        }
+
+        window.onload = get();
+    </script>
+</body>
+</html>

@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="GB2312">
+	<title>SA</title>
+	<style>
+		body {
+			background-repeat: no-repeat;
+			background-position:right bottom;
+			background-attachment: fixed;
+		}
+		canvas {
+			border: 2px solid #a318ce;
+			margin: 20px; 
+		}
+	</style>
+</head>
+
+<script>
+	var pointX = [], pointY = [];                            // 你画的点
+	var ans, lis;                                            // DFS/SA求解哈密顿回路结果
+	var vis = [];                                            // DFS辅助数组
+
+	function addPoint(e) {                                   // 点击画布加点
+		var myCanvas = document.getElementById("myCanvas");
+		var ctx = myCanvas.getContext("2d");
+		if (pointX.length == 0) ctx.clearRect(0, 0, 800, 400);
+		ctx.strokeStyle = "#ff0000";
+		ctx.beginPath();                                     // 画点
+		ctx.arc(e.clientX - myCanvas.offsetLeft, e.clientY - myCanvas.offsetTop, 3, 0, 2 * Math.PI);
+		ctx.stroke();
+		pointX.push(e.clientX - myCanvas.offsetLeft);        // 存点
+		pointY.push(e.clientY - myCanvas.offsetTop);
+		vis.push(0);
+	}
+
+	function reset() {                                       // 重置
+		pointX.length = pointY.length = vis.length = 0;
+		var myCanvas = document.getElementById("myCanvas");
+		var ctx = myCanvas.getContext("2d");
+		ctx.clearRect(0, 0, 800, 400);
+		ctx.strokeStyle = "#000000";
+		ctx.font = "30px Arial";
+		ctx.fillText("click here ^_^", 300, 200);
+		document.getElementById("show").innerHTML = "";
+	}
+
+	function draw() {                                        // 画图
+		var myCanvas = document.getElementById("myCanvas");
+		var ctx = myCanvas.getContext("2d");
+		ctx.clearRect(0, 0, 800, 400);                       // 清空画布
+		ctx.strokeStyle = "#000000";
+		for (var i = 0; i < lis.length-1; i++) {
+			ctx.beginPath();                                 // 画边
+			ctx.moveTo(pointX[lis[i]], pointY[lis[i]]);
+			ctx.lineTo(pointX[lis[i + 1]], pointY[lis[i + 1]]);
+			ctx.stroke();
+		}
+		ctx.strokeStyle = "#ff0000";
+		for (var i = 0; i < pointX.length; i++) {
+			ctx.beginPath();                                 // 画点
+			ctx.arc(pointX[i], pointY[i], 3, 0, 2 * Math.PI);
+			ctx.stroke();
+		}
+	}
+
+	function judge() {                                       // 判断输入合法
+		var num = document.getElementById("num");
+		num.value = Math.max(Math.min(num.value, 100), 2);
+	}
+
+	function randomPoint() {                                 // 随机加点测试
+		reset();
+		var num = document.getElementById("num");
+		var myCanvas = document.getElementById("myCanvas");
+		var ctx = myCanvas.getContext("2d");
+		if (pointX.length == 0) ctx.clearRect(0, 0, 800, 400);
+		ctx.strokeStyle = "#ff0000";
+		for (var i = 0; i < num.value; i++) {
+			var x = Math.floor(Math.random() * 800), y = Math.floor(Math.random() * 400);
+			ctx.beginPath();                                 // 画点
+			ctx.arc(x, y, 3, 0, 2 * Math.PI);
+			ctx.stroke();
+			pointX.push(x);                                  // 存点
+			pointY.push(y);
+			vis.push(0);
+		}
+	}
+
+	function dfs(x, num, len, sublis) {                      // DFS 递归部分；O(n!)
+		vis[x] = 1;
+		if (num == pointX.length) {
+			len += Math.sqrt(Math.pow(pointX[x] - pointX[0], 2) + Math.pow(pointY[x] - pointY[0], 2));
+			if (len < ans) {
+				ans = len;
+				lis = sublis.concat() + 0;                   // JS 数组深拷贝 + push_back起点
+			}
+		}
+		for (var i = 0; i < pointX.length; i++) {
+			if (vis[i] == 0)
+				dfs(i, num + 1, len + Math.sqrt(Math.pow(pointX[x] - pointX[i], 2) + Math.pow(pointY[x] - pointY[i], 2)), sublis + i);
+		}
+		vis[x] = 0;
+	}
+
+	function DFS() {                                         // DFS 主函数
+		ans = 1e9; lis = [];
+		if (pointX.length < 2) alert("请添加更多点~");
+		else if (pointX.length > 10) alert("超过10个点dfs会爆炸的哦~");
+		else {
+			dfs(0, 1, 0, [0]);
+			draw();
+			document.getElementById("show").innerHTML = "length: " + ans.toFixed(2);
+		}
+	}
+	
+	function SA() {                                          // 模拟退火算法
+		ans = 1e9; lis = []; 
+		if (pointX.length < 2) {
+			alert("请添加更多点~");
+			return;
+		}
+		var alpha = 0.999, T = 1e4, x, y, z, sum, sublis = [];
+		for (var i = 0; i < pointX.length; i++) sublis.push(i);
+		while (T > 1e-9) {
+			sum = 0;
+			if (Math.random() < 0.2) {                       // 交换相邻两个点
+				do {
+					x = Math.floor(Math.random() * pointX.length);
+				} while (x == pointX.length - 1);
+				y = x + 1;
+				var temp = sublis[x]; sublis[x] = sublis[y]; sublis[y] = temp;
+			}
+			else if (Math.random() < 0.4) {                  // 交换任意两个点
+				do {
+					x = Math.floor(Math.random() * pointX.length), y = Math.floor(Math.random() * pointX.length);
+				} while (x >= y);
+				var temp = sublis[x]; sublis[x] = sublis[y]; sublis[y] = temp;
+			}
+			else if (Math.random() < 0.7) {                  // 翻转 [x, y]
+				do {
+					x = Math.floor(Math.random() * pointX.length), y = Math.floor(Math.random() * pointX.length);
+				} while (x >= y);
+				for (var i = x, j = y; i < j; i++, j--) {
+					var temp = sublis[i]; sublis[i] = sublis[j]; sublis[j] = temp;
+				}
+			}
+			else {                                           // 交换 [x, y) 和 [y, z)
+				do {
+					x = Math.floor(Math.random() * pointX.length);
+					y = Math.floor(Math.random() * pointX.length);
+					z = Math.floor(Math.random() * pointX.length);
+				} while (x > y || y > z);
+				sublis = sublis.slice(0, x).concat(sublis.slice(y, z)).concat(sublis.slice(x, y)).concat(sublis.slice(z));
+			}
+			for (var i = 0; i < sublis.length-1; i++)        // 计算路径
+				sum += Math.sqrt(Math.pow(pointX[sublis[i]] - pointX[sublis[i + 1]], 2) + Math.pow(pointY[sublis[i]]-pointY[sublis[i + 1]], 2));
+			sum += Math.sqrt(Math.pow(pointX[sublis[sublis.length-1]] - pointX[sublis[0]], 2) + Math.pow(pointY[sublis[sublis.length-1]]-pointY[sublis[0]], 2));
+			if (sum < ans || Math.random() < Math.exp(-(sum - ans)/T)) { // 更新条件
+				ans = sum;
+				lis = sublis.slice(0);
+			}
+			else sublis = lis.slice(0);
+			T *= alpha;
+		}
+		lis.push(lis[0]);                                    // 回路，加上起点
+		draw();
+		document.getElementById("show").innerHTML = "length: " + ans.toFixed(2);
+	}
+</script> 
+
+<body background="image/background.jpg">
+	<canvas id="myCanvas" width="800" height="400" onclick="addPoint(event)" > </canvas>
+	<script>
+		var myCanvas = document.getElementById("myCanvas");
+		var ctx = myCanvas.getContext("2d");
+		ctx.font = "30px Arial";
+		ctx.fillText("click here ^_^", 300, 200);
+	</script> 
+	<br>
+	<button onclick="DFS()">DFS</button>
+	<button onclick="SA()">SA</button>
+	<button onclick="reset()">Reset</button>
+	<br> <br>
+	Random Number(2-100): <input type="number" id="num" min="2" max="100" value="10" onchange="judge()">
+	<button onclick="randomPoint()">RandomPoint</button>
+	<div id="show"></div>
+</body>
+
+</html>

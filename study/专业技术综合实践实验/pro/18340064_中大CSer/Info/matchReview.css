@@ -1,0 +1,75 @@
+@import url("../css/nav.css");
+#container div {
+    float: left;
+    width: 350px;
+    height: 370px;
+    padding: 0px;
+    padding-bottom:20px;
+    margin: 40px;
+    margin-left:50px;
+    border: 1px solid #797979;
+    box-shadow: 0px 3px 6px #B88EED;
+}
+hr {
+    width: 350px;
+    color: #797979;
+}
+#match p {
+    margin:20px;
+    text-align: left;
+    color: #2A0559;
+    font-size: 20px;
+    line-height: 1.75em;
+    font-family: "微软雅黑";
+}
+input {
+    height: 38px;
+    width: 100px;
+    font-size: 24px;
+    background-color: #867AB7;
+    color: #FFFFFF;
+    border-radius: 4px;
+    border: 1px solid #797979;
+    opacity: 0.8;
+    margin-left: 10px;
+    margin-bottom: 10px;
+}
+#post {
+    float: none;
+    left: 0px;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    position: fixed;
+    display: none;
+    margin: auto;
+    width: 800px;
+    height: 400px;
+    border: 1px solid #797979;
+    background-color: #FFFFFF;
+    border-radius: 5px;
+    border: 1px solid #797979;
+    box-shadow: 0px 3px 6px #5f5f5f;
+}
+#X {
+    margin-left:770px;
+    position: fixed;
+    width:30px;
+}
+.btn{
+    width:130px;
+    height: 35px;
+    background-color: transparent;
+    color: #AEA5B9;
+    font-size: medium;
+    font-family: '微软雅黑';
+    border-color: transparent;
+}
+.lastli{
+    position: absolute;
+    float:right;
+    right:-300px;
+}
+#container{
+    margin-top:50px;
+}

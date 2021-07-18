@@ -1,0 +1,36 @@
+/** this is another sample program **/
+ INT f1(INT x) 
+ BEGIN 
+    INT i := 0;
+    INT ans;
+    FOR (i := 0; i < x; i := i + 1) 
+    BEGIN
+       INT hello;
+	   ans := ans + i;
+	END
+	REAL hello2;
+    RETURN ans; 
+ END 
+ INT f2(INT x, INT y ) 
+ BEGIN 
+    INT z;
+    z := x*x - y/y;
+    IF (x != y) z := z + x;
+    RETURN z; 
+ END 
+ INT MAIN f() 
+ BEGIN
+    INT x;
+    READ(x, "A41.input");
+    INT y;
+    READ(y, "A42.input");
+    INT z;
+    z := f1(x) + f2(y,x);
+    WHILE (x > y)
+    BEGIN
+       z := z ^ x % y;
+       x := x - y;
+    END
+    WRITE (z, "A4.output"); 
+ END
+ 

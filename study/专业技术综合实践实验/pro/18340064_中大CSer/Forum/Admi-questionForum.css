@@ -1,0 +1,246 @@
+@import url("../css/nav.css");
+#container{
+    margin-top:80px;
+}
+#question {
+    width: 900px;
+    height: 350px;
+    padding: 0px;
+    padding-bottom: 20px;
+    margin: 30px auto;
+    border: 1px solid #797979;
+    box-shadow: 0px 3px 6px #B88EED;
+}
+
+hr {
+    width: 900px;
+    color: #797979;
+}
+
+img {
+    margin-left: 20px;
+    margin-top: 10px;
+    float: left;
+    border-radius: 50%;
+    overflow: hidden;
+    width: 50px;
+}
+
+#name {
+    width: 100px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    float: left;
+    margin-left: 10px;
+    color: #2A0559;
+    font-size: 22px;
+    font-family: "微软雅黑";
+}
+
+#date {
+    float: left;
+    margin-left: 30px;
+    margin-top: 30px;
+    color: #2A0559;
+    font-size: 15px;
+    font-family: "微软雅黑";
+}
+
+#title {
+    text-align:left;
+    width: 800px;
+    height: 40px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    padding: 5px;
+    margin: 0px 50px;
+    color: #2A0559;
+    font-size: 20px;
+    font-family: "微软雅黑";
+}
+
+#contentdiv {
+    margin: 0px 50px;
+    padding-top: 0px;
+    width: 800px;
+    overflow: hidden;
+    height: 140px;
+}
+
+#content {
+    text-align: left;
+    word-break: break-all;
+    color: #2A0559;
+    font-size: 20px;
+    font-family: "微软雅黑";
+    margin-top: -4px;
+}
+
+#btn {
+    width: 100px;
+    background-color: transparent;
+    border-color: transparent;
+    color: #777777;
+    margin: 0px 400px;
+    height: 30px;
+}
+
+#like {
+    float: right;
+    background: url(../images/unlike.png)no-repeat;
+    background-size: 40px 40px;
+    width: 80px;
+    height: 40px;
+    background-color: transparent;
+    border-color: transparent;
+    margin-right: 10px;
+    margin-top: 16px;
+    color: #B88EED;
+    font-size: 18px;
+    font-family: "微软雅黑";
+}
+
+#favor {
+    float: right;
+    background: url(../images/unfavor.png)no-repeat;
+    background-size: 40px 40px;
+    width: 80px;
+    height: 40px;
+    background-color: transparent;
+    border-color: transparent;
+    margin-right: 30px;
+    margin-top: 16px;
+    color: #B88EED;
+    font-size: 18px;
+    font-family: "微软雅黑";
+}
+
+#comment {
+    float: right;
+    background: url(../images/comment.png)no-repeat;
+    background-size: 40px 40px;
+    width: 80px;
+    height: 40px;
+    background-color: transparent;
+    border-color: transparent;
+    margin-right: 10px;
+    margin-top: 16px;
+    color: #B88EED;
+    font-size: 18px;
+    font-family: "微软雅黑";
+}
+
+#othercomment {
+    margin-top: 50px;
+}
+
+#commenttext {
+    text-align: left;
+    width: 800px;
+    height: 100px;
+    margin: 0px 50px;
+    margin-top: 10px;
+    font-size: 18px;
+    font-family: "微软雅黑";
+}
+
+#commentbtn {
+    width: 100px;
+    margin: 0px 400px;
+    margin-top: 10px;
+    height: 38px;
+    font-size: 20px;
+    background-color: #867AB7;
+    color: #FFFFFF;
+    border-radius: 4px;
+    border: 1px solid #797979;
+    opacity: 0.8;
+}
+
+#discuss {
+    width: 800px;
+    height: 200px;
+    padding: 0px;
+    margin: 0px auto;
+    border: 1px solid;
+    border-color: #797979 #797979 transparent #797979;
+}
+
+#hr1 {
+    width: 800px;
+    color: #797979;
+}
+
+#contentdiv1 {
+    margin: 0px 50px;
+    padding-top: 0px;
+    width: 700px;
+    overflow: hidden;
+    height: 90px;
+}
+
+#content1 {
+    text-align: left;
+    word-break: break-all;
+    color: #2A0559;
+    font-size: 18px;
+    font-family: "微软雅黑";
+    margin-top: -4px;
+}
+
+#hr2 {
+    width: 800px;
+    color: #797979;
+    margin-top: -2px;
+}
+
+#deletebtn {
+    float: right;
+    margin-right: 50px;
+    width: 100px;
+    height: 38px;
+    font-size: 20px;
+    background-color: #867AB7;
+    color: #FFFFFF;
+    border-radius: 4px;
+    border: 1px solid #797979;
+    opacity: 0.8;
+}
+
+#post {
+    float: none;
+    left: 0px;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    position: fixed;
+    display: none;
+    margin: auto;
+    width: 800px;
+    height: 400px;
+    border: 1px solid #797979;
+    background-color: #FFFFFF;
+    border-radius: 5px;
+    border: 1px solid #797979;
+    box-shadow: 0px 3px 6px #5f5f5f;
+    z-index: 100;
+}
+#X {
+    margin-left:770px;
+    position: fixed;
+    width:30px;
+}
+.btn{
+    width:130px;
+    height: 35px;
+    background-color: transparent;
+    color: #AEA5B9;
+    font-size: medium;
+    font-family: '微软雅黑';
+    border-color: transparent;
+}
+.lastli{
+    position: absolute;
+    float:right;
+    right:-300px;
+}

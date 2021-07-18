@@ -1,0 +1,114 @@
+﻿<!DOCTYPE html>
+<html>
+    <head>
+        <title>Python_Guide</title>
+        <link rel="stylesheet" type="text/css" href="../css/nav.css" />
+        <link rel="stylesheet" type="text/css" href="../css/awesome/font-awesome.css" />
+        <link rel="stylesheet" type="text/css" href="./guide.css" />
+    </head>
+<body>
+    <div id="post">
+        <input id="X" type="button" onclick="close1(this)" value="X">
+        <iframe id="ifr" frameborder="0" width="800" height="400" src=""></iframe>
+    </div>
+    <div class= "container">
+        <div id="nav_outer">
+            <ul class="wrapper" id="nav">
+                <li class="CSer" style="color: #FFFFFF; ">中大CSer</li>
+                <li><a href="../Guide/Admi-c.html">指南</a></li>
+                <li><a href="../Resources/adminResources.html">资源</a></li>
+                <li><a href="#">资讯</a><i class="fa fa-caret-down logo"></i>
+                    <ul class="subnav">
+                        <li><a href="../Info/Admi-matchInfo.html">比赛</a></li>
+                        <li><a href="../Info/Admi-jobInfo.html">招聘</a></li>
+                    </ul>
+                </li>
+                <li><a href="#">论坛</a><i class="fa fa-caret-down logo"></i>
+                    <ul class="subnav">
+                        <li><a href="../Forum/Admi-questionForum.html">问题</a></li>
+                        <li><a href="../Forum/Admi-strategyForum.html">攻略</a></li>
+                    </ul>
+                </li>
+                <li class="lastli"><a href="#"></a>
+                    <ul class="subnav">
+                        <li><a><input class="btn" type="button" value="发布攻略帖" onclick="window1(1)"></a></li>
+                        <li><a><input class="btn" type="button" value="发布问题贴" onclick="window1(2)"></a></li>
+                        <li><a><input class="btn" type="button" value="发布资源" onclick="window1(3)"></a></li>
+                        <li><a><input class="btn" type="button" value="发布比赛资讯" onclick="window1(4)"></a></li>
+                        <li><a><input class="btn" type="button" value="发布招聘资讯" onclick="window1(5)"></a></li>
+                        <li><a href="../Info/matchReview.html">审核比赛资讯</a></li>
+                        <li><a href="../Info/jobReview.html">审核招聘资讯</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+        <div class="left">
+            <button onclick="window.location.href = 'Admi-c.html'">C程序设计</button>
+            <button onclick="window.location.href = 'Admi-cplusplus.html'">Java程序设计</button>
+            <button onclick="window.location.href = 'Admi-python.html'">Python</button>
+            <button onclick="window.location.href = 'Admi-java.html'">Java</button>
+        </div>
+        <div class="middle">
+            <h1 id="title">Java程序设计</h1>
+            <h2 id="para1">什么是Java？</h2>
+            <p>Java是一门面向对象编程语言，不仅吸收了C++语言的各种优点，还摒弃了C++里难以理解的多继承、指针等概念，因此Java语言具有功能强大和简单易用两个特征。Java语言作为静态面向对象编程语言的代表，极好地实现了面向对象理论，允许程序员以优雅的思维方式进行复杂的编程。</p>
+            <h2 id="para2">Java的应用领域</h2>
+            <p>许多的 Android应用都是Java程序员开发者开发。虽然 Android运用了不同的JVM以及不同的封装方式，但是代码还是用Java语言所编写。相当一部分的手机中都支持JAVA游戏，这就使很多非编程人员都认识了JAVA。Java在金融服务业的应用非常广泛，很多第三方交易系统、银行、金融机构都选择用Java开发，因为相对而言，Java较安全。大型跨国投资银行用Java来编写前台和后台的电子交易系统，结算和确认系统，数据处理项目以及其他项目。大多数情况下，Java被用在服务器端开发，但多数没有任何前端，它们通常是从一个服务器（上一级）接收数据，处理后发向另一个处理系统（下一级处理）。ava 在电子商务领域以及网站开发领域占据了一定的席位。开发人员可以运用许多不同的框架来创建web项目，SpringMVC，Struts2.0以及frameworks。即使是简单的 servlet，jsp和以struts为基础的网站在政府项目中也经常被用到。例如医疗救护、保险、教育、国防以及其他的不同部门网站都是以Java为基础来开发的。</p>
+            <h2 id="para3">Java的优缺点</h2>
+            <p>Java的优点：Java是纯面向对象的语言。《Java编程思想》中提到Java语言是一种“Everything is object”的语言，它能够直接反映现实生活中的对象，例如车、动物等，因此通过它编写程序更容易；平台无关性。Java语言可以“一次编译，到处执行”。无论是在Windows平台还是在Linux、MacOS等其他平台上对Java程序进行编译，编译后的程序在其他平台上都可以运行。由于Java是解释性语言，编译器会将Java代码变成“中间代码”，然后在Java虚拟机（Java Virtual Machine，JVM）上解释执行。由于中间代码与平台无关，因此Java语言可以很好的跨平台执行，具有很好的可移植性；Java提供了很多内置的类库，通过这些类库，简化了开发人员的程序设计工作，同时缩短了项目的开发时间，例如，Java语言提供了对多线程的支持，提供了对网络通信的支持，最主要的是提供了垃圾回收器，这使得开发人员从内存的管理中解脱出来。Java同样具有缺点：解释型语言，运行速度效率极低，不支持底层操作！这是非常致命的；Java一般不用于建立大型项目；取消了指针操作，不够C语言那样灵活。</p>
+            <h2 id="para4">更多资料</h2>
+            <p>你可以从<a href="https://baike.baidu.com/item/java/85979">百度百科</a>中了解到更多关于Java的发展历史和应用领域等基础信息。如果你想要再深入学习Java，你也可以从<a href="https://www.csdn.net/">CSDN</a>和<a href="https://www.cnblogs.com/">博客园</a>中搜索你想要了解的知识。</p>
+        </div>
+        <div class="right">
+            <div class="right-son">
+                <p><a href=#title>Java入门</a></p>
+                <p><a href=#para1>什么是Java？</a></p>
+                <p><a href=#para2>Java的应用领域</a></p>
+                <p><a href=#para3>Java的优缺点</a></p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function window1(i) {
+            var post = document.getElementById("post");
+            var container = post.parentNode;
+            var ifr = document.getElementById("ifr");
+            container.style.backgroundColor = "gray";
+            container.style.opacity = "80%";
+            if (i == 1)//发帖
+                ifr.src = "../post/strategyPost.html";
+            else if (i == 2)//发帖
+                ifr.src = "../post/problemPost.html";
+            else if (i == 3)//资源
+                ifr.src = "../post/resourceUpload.jsp";
+            else if (i == 4)//资讯
+                ifr.src = "../post/matchPost.html";
+            else if (i == 5)//资讯
+                ifr.src = "../post/jobPost.html";
+            post.style.display = "block";
+        }
+        function close1(btn) {
+            var post = btn.parentNode;
+            post.style.display = "none";
+            var container = btn.parentNode.parentNode;
+            container.style.backgroundColor = "transparent";
+        }
+        function set() {
+            var name = document.createElement('li');
+            name.classList.add("name");
+            name.innerHTML = localStorage.getItem("Name");
+            var a = document.body.childNodes[3].childNodes[1].childNodes[1].childNodes[11].childNodes[0];
+            a.href = "../Center/admin.html";
+            var img = document.createElement('img');
+            img.src = localStorage.getItem("ImagePath");
+            img.classList.add("image");
+            a.appendChild(img);
+            // console.log(document.body.childNodes[3].childNodes[1].childNodes[1].childNodes[11]);
+            document.body.childNodes[3].childNodes[1].childNodes[1].insertBefore(name, document.body.childNodes[3].childNodes[1].childNodes[1].childNodes[11]);
+        }
+
+        window.onload = set();
+    </script>
+</body>
+</html>

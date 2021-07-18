@@ -1,0 +1,119 @@
+﻿<!DOCTYPE html>
+<html>
+    <head>
+        <title>Python_Guide</title>
+        <link rel="stylesheet" type="text/css" href="../css/nav.css" />
+        <link rel="stylesheet" type="text/css" href="../css/awesome/font-awesome.css" />
+        <link rel="stylesheet" type="text/css" href="./guide.css" />
+    </head>
+<body>
+    <div id="post">
+        <input id="X" type="button" onclick="close1(this)" value="X">
+        <iframe id="ifr" frameborder="0" width="800" height="400" src=""></iframe>
+    </div>
+    <div class= "container">
+        <div id="nav_outer">
+            <ul class="wrapper" id="nav">
+                <li class="CSer" style="color: #FFFFFF; ">中大CSer</li>
+                <li><a href="../Guide/Admi-c.html">指南</a></li>
+                <li><a href="../Resources/adminResources.html">资源</a></li>
+                <li><a href="#">资讯</a><i class="fa fa-caret-down logo"></i>
+                    <ul class="subnav">
+                        <li><a href="../Info/Admi-matchInfo.html">比赛</a></li>
+                        <li><a href="../Info/Admi-jobInfo.html">招聘</a></li>
+                    </ul>
+                </li>
+                <li><a href="#">论坛</a><i class="fa fa-caret-down logo"></i>
+                    <ul class="subnav">
+                        <li><a href="../Forum/Admi-questionForum.html">问题</a></li>
+                        <li><a href="../Forum/Admi-strategyForum.html">攻略</a></li>
+                    </ul>
+                </li>
+                <li class="lastli"><a href="#"></a>
+                    <ul class="subnav">
+                        <li><a><input class="btn" type="button" value="发布攻略帖" onclick="window1(1)"></a></li>
+                        <li><a><input class="btn" type="button" value="发布问题贴" onclick="window1(2)"></a></li>
+                        <li><a><input class="btn" type="button" value="发布资源" onclick="window1(3)"></a></li>
+                        <li><a><input class="btn" type="button" value="发布比赛资讯" onclick="window1(4)"></a></li>
+                        <li><a><input class="btn" type="button" value="发布招聘资讯" onclick="window1(5)"></a></li>
+                        <li><a href="../Info/matchReview.html">审核比赛资讯</a></li>
+                        <li><a href="../Info/jobReview.html">审核招聘资讯</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+        <div class="left">
+            <button onclick="window.location.href = 'Admi-c.html'">C程序设计</button>
+            <button onclick="window.location.href = 'Admi-cplusplus.html'">C++程序设计</button>
+            <button onclick="window.location.href = 'Admi-python.html'">Python</button>
+            <button onclick="window.location.href = 'Admi-java.html'">Java</button>
+        </div>
+        <div class="middle">
+            <h1 id="title">Python入门指南</h1>
+            <h2 id="para1">什么是Python？</h2>
+            <p>python的创始人为吉多·范罗苏姆（Guido van Rossum）。1989年的圣诞节期间，Guido开始写能够解释Python语言语法的解释器。Python这个名字，来自Guido所挚爱的电视剧Monty Python’s Flying Circus。他希望这个新的叫做Python的语言，能符合他的理想：创造一种C和shell之间，功能全面，易学易用，可拓展的语言。</p>
+            <p>Python的设计目标之一是让代码具备高度的可阅读性。它设计时尽量使用其它语言经常使用的标点符号和英文单字，让代码看起来整洁美观。它不像其他的静态语言如C、Pascal那样需要重复书写声明语句，也不像它们的语法那样经常有特殊情况和意外。</p>
+            <h2 id="para2">Python应用领域</h2>
+            <p>基于大数据分析和深度学习而发展出来的人工智能本质上已经无法离开python的支持，目前世界优秀的人工智能学习框架如Google的TransorFlow 、FaceBook的PyTorch以及开源社区的神经网络库Karas等是用python实现的，甚至微软的CNTK（认知工具包）也完全支持Python，而且微软的Vscode都已经把Python作为第一级语言进行支持。</p>
+            <p>Python在与操作系统结合以及管理中非常密切，目前所有linux发行版中都带有python，且对于linux中相关的管理功能都有大量的模块可以使用，例如目前主流的自动化配置管理工具：SaltStack Ansible（目前是RedHat的）。目前在几乎所有互联网公司，自动化运维的标配就是python+Django/flask，另外，在虚拟化管理方面已经是事实标准的openstack就是python实现的，所以Python是所有运维人员的必备技能。</p>
+            <p>Python作为一种解释型脚本语言，可以应用于以下领域中：Web和Internet开发、软件开发、后端开发、桌面界面开发、科学计算和统计、人工智能、教育近年来，由于Python 有不断改良的库(主要是pandas),使其成为数据处理使命的一大代替计划。结合其在通用编程方面的强大实力，我们完全可以只使用Python 这一种编程语言。</p>
+            <h2 id="para3">Python的优缺点</h2>
+            <p>Python就为我们提供了非常完善的基础代码库，覆盖了网络、文件、GUI、数据库、文本等大量内容，被形象地称作“内置电池（batteries included）”。用Python开发，许多功能不必从零编写，直接使用现成的即可。除了内置的库外，Python还有大量的第三方库，也就是别人开发的，供你直接使用的东西。当然，如果你开发的代码通过很好的封装，也可以作为第三方库给别人使用。</p>
+            <p>第一个缺点就是运行速度慢，和C程序相比非常慢，因为Python是解释型语言，你的代码在执行时会一行一行地翻译成CPU能理解的机器码，这个翻译过程非常耗时，所以很慢。而C程序是运行前直接编译成CPU能执行的机器码，所以非常快。第二个缺点就是代码不能加密。如果要发布你的Python程序，实际上就是发布源代码，这一点跟C语言不同，C语言不用发布源代码，只需要把编译后的机器码（也就是你在Windows上常见的xxx.exe文件）发布出去。要从机器码反推出C代码是不可能的，所以，凡是编译型的语言，都没有这个问题，而解释型的语言，则必须把源码发布出去。</p>
+            <h2 id="para4">更多资料</h2>
+            <p>你可以从<a href="https://baike.baidu.com/item/Python/407313?fr=aladdin">百度百科</a>中了解到更多关于Python的发展历史和应用领域等基础信息。如果你想要再深入学习Python，你也可以从<a href="https://www.csdn.net/">CSDN</a>和<a href="https://www.cnblogs.com/">博客园</a>中搜索你想要了解的知识。</p>                
+        </div>
+        <div class="right">
+            <div class="right-son">
+                <p><a href=#title>Python</a></p>
+                <p><a href=#para1>什么是Python？</a></p>
+                <p><a href=#para2>Python的应用领域</a></p>
+                <p><a href=#para3>Python的优缺点</a></p>
+
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function window1(i) {
+            var post = document.getElementById("post");
+            var container = post.parentNode;
+            var ifr = document.getElementById("ifr");
+            container.style.backgroundColor = "gray";
+            container.style.opacity = "80%";
+            if (i == 1)//发帖
+                ifr.src = "../post/strategyPost.html";
+            else if (i == 2)//发帖
+                ifr.src = "../post/problemPost.html";
+            else if (i == 3)//资源
+                ifr.src = "../post/resourceUpload.jsp";
+            else if (i == 4)//资讯
+                ifr.src = "../post/matchPost.html";
+            else if (i == 5)//资讯
+                ifr.src = "../post/jobPost.html";
+            post.style.display = "block";
+        }
+        function close1(btn) {
+            var post = btn.parentNode;
+            post.style.display = "none";
+            var container = btn.parentNode.parentNode;
+            container.style.backgroundColor = "transparent";
+        }
+        function set() {
+            var name = document.createElement('li');
+            name.classList.add("name");
+            name.innerHTML = localStorage.getItem("Name");
+            var a = document.body.childNodes[3].childNodes[1].childNodes[1].childNodes[11].childNodes[0];
+            a.href = "../Center/admin.html";
+            var img = document.createElement('img');
+            img.src = localStorage.getItem("ImagePath");
+            img.classList.add("image");
+            a.appendChild(img);
+            // console.log(document.body.childNodes[3].childNodes[1].childNodes[1].childNodes[11]);
+            document.body.childNodes[3].childNodes[1].childNodes[1].insertBefore(name, document.body.childNodes[3].childNodes[1].childNodes[1].childNodes[11]);
+        }
+
+        window.onload = set();
+    </script>
+</body>
+</html>

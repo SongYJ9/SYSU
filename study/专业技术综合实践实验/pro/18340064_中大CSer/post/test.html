@@ -1,0 +1,77 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <style>
+        #post {
+            float: none;
+            left: 0px;
+            top: 0px;
+            right: 0px;
+            bottom: 0px;
+            position: fixed;
+            display: none;
+            margin: auto;
+            width: 800px;
+            height: 400px;
+            border: 1px solid #797979;
+            background-color: #FFFFFF;
+            border-radius: 5px;
+            border: 1px solid #797979;
+            box-shadow: 0px 3px 6px #5f5f5f;
+        }
+        #X {
+            margin-left:770px;
+            position: fixed;
+            width:30px;
+        }
+    </style>
+</head>
+<!--每个文件加入id="container"，div post部分，和script部分-->
+<body id="container">
+    <div id="post">
+        <input id="X" type="button" onclick="close1(this)" value="X">
+        <iframe id="ifr" frameborder="0" width="800" height="400" src=""></iframe>
+    </div>
+    <!--通过window1(i)调用显示iframe-->
+    <input type="button" onclick="window1(1)" value="弹窗1">
+    <input type="button" onclick="window1(2)" value="弹窗2">
+    <input type="button" onclick="window1(3)" value="弹窗3">
+    <input type="button" onclick="window1(4)" value="弹窗4">
+    <input type="button" onclick="window1(5)" value="弹窗5">
+    <p>专业好他妈难专业好他妈难专业好他妈难专业好他妈难专业好他妈难专业好他妈难专业好他妈难专业好他妈难专业好他妈难专业好他妈难专业好他妈难专业好他妈难</p>
+    <p>专业好他妈难专业好他妈难专业好他妈难专业好他妈难专业好他妈难专业好他妈难专业好他妈难专业好他妈难专业好他妈难专业好他妈难专业好他妈难专业好他妈难</p>
+    <p>专业好他妈难专业好他妈难专业好他妈难专业好他妈难专业好他妈难专业好他妈难专业好他妈难专业好他妈难专业好他妈难专业好他妈难专业好他妈难专业好他妈难</p>
+    <p>专业好他妈难专业好他妈难专业好他妈难专业好他妈难专业好他妈难专业好他妈难专业好他妈难专业好他妈难专业好他妈难专业好他妈难专业好他妈难专业好他妈难</p>
+    <p>专业好他妈难专业好他妈难专业好他妈难专业好他妈难专业好他妈难专业好他妈难专业好他妈难专业好他妈难专业好他妈难专业好他妈难专业好他妈难专业好他妈难</p>
+    <p>专业好他妈难专业好他妈难专业好他妈难专业好他妈难专业好他妈难专业好他妈难专业好他妈难专业好他妈难专业好他妈难专业好他妈难专业好他妈难专业好他妈难</p>
+    <script>
+        function window1(i) {
+            var post = document.getElementById("post");
+            var container = post.parentNode;
+            var ifr = document.getElementById("ifr");
+            container.style.backgroundColor = "gray";
+            container.style.opacity = "80%";
+            if (i == 1)//发帖
+                ifr.src = "./forumpost.html";
+            else if (i == 2)
+                ifr.src="./strategypost.html"
+            else if (i == 3)//资源
+                ifr.src = "./resourcepost.html";
+            else if (i == 4)//资讯
+                ifr.src = "./infopost.html";
+            else if (i == 5)//资讯
+                ifr.src = "./jobpost.html";
+            post.style.display = "block";
+        }
+        function close1(btn) {
+            var post = btn.parentNode;
+            post.style.display = "none";
+            var container = btn.parentNode.parentNode;
+            container.style.backgroundColor = "transparent";
+        }
+
+    </script>
+</body>
+</html>

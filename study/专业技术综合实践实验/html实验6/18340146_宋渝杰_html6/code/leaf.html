@@ -1,0 +1,103 @@
+<!DOCTYPE  html>
+<html lang="zh-cn">
+   <head>
+      <meta charset="utf-8"/>
+      <title>This is my title</title>
+      <style>
+        .leaf {
+            width: 50px;
+            height: 55px;
+            background: url(images/leaf.gif);
+            position: absolute;
+        }
+        #bk {
+            width: 600px;
+            height: 600px;
+            margin: 0 auto;
+            background: url(images/leaf_bk.jpg) ;
+            z-index: -2;
+        }
+        @keyframes myfirst {
+            0% {
+                opacity: 0.1;
+                transform: translateY(0px) rotateY(90deg);
+            }
+            25% {
+                opacity: 0.8;
+                transform: translateY(180px) rotateY(180deg);
+            }
+            50% {
+                opacity: 0.5;
+                transform: translateY(360px) rotateY(270deg);
+            }
+            75% {
+                opacity: 0.9;
+                transform: translateY(540px) rotateY(360deg);
+            }
+            100% {
+                opacity: 0;
+                transform: translateY(540px) rotateY(360deg);
+            }
+        }
+        #d1 {
+            animation: myfirst infinite linear;
+            animation-duration: 3s;
+            left: 10%;
+        }
+        #d2 {
+            animation: myfirst infinite linear;
+            animation-duration: 3.5s;
+            animation-delay: 1s;
+            left: 20%;
+        }
+        #d3 {
+            animation: myfirst infinite linear;
+            animation-duration: 4s;
+            left: 30%;
+        }
+        #d4 {
+            animation: myfirst infinite linear;
+            animation-duration: 3.5s;
+            left: 40%;
+        }
+        #d5 {
+            animation: myfirst infinite linear;
+            animation-duration: 4s;
+            animation-delay: 0.5s;
+            left: 50%;
+        }
+        #d6 {
+            animation: myfirst infinite linear;
+            animation-duration: 3s;
+            left: 60%;
+        }
+        #d7 {
+            animation: myfirst infinite linear;
+            animation-duration: 4s;
+            animation-delay: 0.5s;
+            left: 70%;
+        }
+        #d8 {
+            animation: myfirst infinite linear;
+            animation-duration: 3s;
+            animation-delay: 1.5s;
+            left: 80%;
+        }
+   </style>
+   </head>
+   <body>
+    <div id="bk">
+      <div id="d1" class="leaf"></div>
+      <div id="d2" class="leaf"></div>
+      <div id="d3" class="leaf"></div>
+      <div id="d4" class="leaf"></div>
+      <div id="d5" class="leaf"></div>
+      <div id="d6" class="leaf"></div>
+      <div id="d7" class="leaf"></div>
+      <div id="d8" class="leaf"></div>
+    </div>
+    </body>
+</html>
+         
+
+                

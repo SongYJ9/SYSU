@@ -1,0 +1,63 @@
+﻿<%@ page language="java" import="java.util.*" contentType="text/html; charset=utf-8" %>
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>post</title>
+    <style>
+        form {
+            padding-left: 20px;
+        }
+        p {
+            font-size: 22px;
+            font-family: "微软雅黑";
+            text-align: center;
+        }
+        span {
+            vertical-align: top;
+            font-size: 20px;
+            font-family: "微软雅黑";
+        }
+        #title, #date, #member, #link, #wage {
+            width: 650px;
+            height: 25px;
+            font-size: 18px;
+            font-family: "微软雅黑";
+        }
+        #deadline {
+            width: 610px;
+            height: 28px;
+            font-size: 18px;
+            font-family: "微软雅黑";
+        }
+        #submit {
+            margin-left: 350px;
+            height: 35px;
+            width: 100px;
+            font-size: 20px;
+            background-color: #867AB7;
+            color: #FFFFFF;
+            border-radius: 4px;
+            border: 1px solid #797979;
+            opacity: 0.8;
+        }
+    </style>
+</head>
+
+<body>
+    <form action="resourceUpload.jsp" method="post" enctype="multipart/form-data">
+        <p>资源分享</p>
+        <span>模块：</span>
+        专业技术<input type="radio" name="Module" value="1" checked="checked"/>
+		计算机网络<input type="radio" name="Module" value="2" /><br><br>
+        <span>文件：</span><input type="file" name="file" size="50"><br><br>
+        <input id="submit" type="submit" value="发布">
+        <p name="user" id="user" value="user"></p>
+        <script>
+       		var div = document.getElementByID("user");
+        	div.innerHTML = localStorage.getItem("Name");
+        	div.value = localStorage.getItem("Name");
+        </script>
+    </form>
+</body>
+</html>

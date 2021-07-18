@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>AJAX-get</title>
+  <style>
+     p {font-size:20px}
+   </style>
+</head>
+<body>
+  <h1>Ajax-get</h1>
+  <p>id��<input id="t1" type="text" onblur="Get()"></p>
+  <p id="t2">[��]</p>
+  <script>
+  	function Get() {
+		alert("~");
+		var t1 = document.getElementById("t1"), t2 = document.getElementById("t2");
+		var xmlhttp = new XMLHttpRequest();
+		xmlhttp.onreadystatechange = function() {
+			if (xmlhttp.readyState == 4) {
+				if (xmlhttp.status >= 200 && xmlhttp.status < 300 || xmlhttp.status == 304) {
+					alert(xmlhttp.responseText);
+					t2.innerHTML = xmlhttp.responseText;
+				}
+				else
+					alert("error");
+			}
+		};
+		xmlhttp.open("get", "http://172.18.187.251:8080/jsp/get.jsp?id=" + t1.value, true);
+		xmlhttp.send(null);
+	}
+  </script>
+</body>
+</html>

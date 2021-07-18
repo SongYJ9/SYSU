@@ -1,0 +1,170 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>matchInfo</title>
+    <link rel="stylesheet" type="text/css" href="../css/awesome/font-awesome.css" />
+    <link rel="stylesheet" type="text/css" href="./matchInfo.css" />
+</head>
+
+<body>
+    <div id="post">
+        <input id="X" type="button" onclick="close1(this)" value="X">
+        <iframe id="ifr" frameborder="0" width="800" height="400" src=""></iframe>
+    </div>
+    <div id="nav_outer">
+        <ul class="wrapper" id="nav">
+            <li class="CSer" style="color: #FFFFFF; ">中大CSer</li>
+            <li><a href="../Guide/c.html">指南</a></li>
+            <li><a href="../Resources/resources.html">资源</a></li>
+            <li><a href="#">资讯</a><i class="fa fa-caret-down logo"></i>
+                <ul class="subnav">
+                    <li><a href="../Info/matchInfo.html">比赛</a></li>
+                    <li><a href="../Info/jobInfo.html">招聘</a></li>
+                </ul>
+            </li>
+            <li><a href="#">论坛</a><i class="fa fa-caret-down logo"></i>
+                <ul class="subnav">
+                    <li><a href="../Forum/questionForum.html">问题</a></li>
+                    <li><a href="../Forum/strategyForum.html">攻略</a></li>
+                </ul>
+            </li>
+            <li class="lastli"><a href="#"></a>
+                <ul class="subnav">
+                    <li><a><input class="btn" type="button" value="发布攻略帖" onclick="window1(1)"></a></li>
+                    <li><a><input class="btn" type="button" value="发布问题贴" onclick="window1(2)"></a></li>
+                    <li><a><input class="btn" type="button" value="发布资源" onclick="window1(3)"></a></li>
+                    <li><a><input class="btn" type="button" value="发布比赛资讯" onclick="window1(4)"></a></li>
+                    <li><a><input class="btn" type="button" value="发布招聘资讯" onclick="window1(5)"></a></li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+    <div id="container">
+    </div>
+    <script>
+        function window1(i) {
+            var post = document.getElementById("post");
+            var container = post.parentNode;
+            var ifr = document.getElementById("ifr");
+            container.style.backgroundColor = "gray";
+            container.style.opacity = "80%";
+            if (i == 1)//发帖
+                ifr.src = "../post/strategyPost.html";
+            else if (i == 2)//发帖
+                ifr.src = "../post/problemPost.html";
+            else if (i == 3)//资源
+                ifr.src = "../post/resourceUpload.jsp";
+            else if (i == 4)//资讯
+                ifr.src = "../post/matchPost.html";
+            else if (i == 5)//资讯
+                ifr.src = "../post/jobPost.html";
+            post.style.display = "block";
+        }
+        function close1(btn) {
+            var post = btn.parentNode;
+            post.style.display = "none";
+            var container = btn.parentNode.parentNode;
+            console.log(container);
+            container.style.backgroundColor = "transparent";
+            container.style.opacity = 1.0;
+            // container.removeAttr("style.")
+        }
+        var data = JSON.stringify([{ "Title": '111比赛', "Date": 'XXX.XXX.XXX.XXX', "Deadline": 'XXX.XXX.XXX.XXX', "Member": '3', "Link": 'WWW.abc.com' },
+            { "Title": '222比赛', "Date": 'XXX.XXX.XXX.XXX', "Deadline": 'XXX.XXX.XXX.XXX', "Member": '3', "Link": 'WWW.abc.com' },
+            { "Title": '333比赛', "Date": 'XXX.XXX.XXX.XXX', "Deadline": 'XXX.XXX.XXX.XXX', "Member": '3', "Link": 'WWW.abc.com' },
+            { "Title": '444比赛', "Date": 'XXX.XXX.XXX.XXX', "Deadline": 'XXX.XXX.XXX.XXX', "Member": '3', "Link": 'WWW.abc.com' },
+            { "Title": '555比赛', "Date": 'XXX.XXX.XXX.XXX', "Deadline": 'XXX.XXX.XXX.XXX', "Member": '3', "Link": 'WWW.abc.com' },
+            { "Title": '666比赛', "Date": 'XXX.XXX.XXX.XXX', "Deadline": 'XXX.XXX.XXX.XXX', "Member": '3', "Link": 'WWW.abc.com' },
+            { "Title": '777比赛', "Date": 'XXX.XXX.XXX.XXX', "Deadline": 'XXX.XXX.XXX.XXX', "Member": '3', "Link": 'WWW.abc.com' }]);
+
+        function testGet() {
+            var match = JSON.parse(data);
+            for (var i = 0; i < match.length; i++) {
+                var match1 = document.createElement('div');
+                var title = document.createElement('p');
+                title.innerHTML = match[i].Title;
+                var hr = document.createElement('hr');
+                var date = document.createElement('p');
+                date.innerHTML = match[i].Date;
+                var deadline = document.createElement('p');
+                deadline.innerHTML = match[i].Deadline;
+                var member = document.createElement('p');
+                member.innerHTML = match[i].Member;
+                var link = document.createElement('p');
+                link.innerHTML = match[i].Link;
+                var container = document.getElementById('container');
+                container.appendChild(match1);
+                match1.appendChild(title);
+                match1.appendChild(hr);
+                match1.appendChild(date);
+                match1.appendChild(deadline);
+                match1.appendChild(member);
+                match1.appendChild(link);
+            }
+        }
+
+        function get() {
+            var xmlhttp = new XMLHttpRequest();
+            xmlhttp.onreadystatechange = function () {
+                if (xmlhttp.readyState == 4) {
+                    if (xmlhttp.status >= 200 && xmlhttp.status < 300) {
+                        var data = xmlhttp.responseText;
+                        var match = JSON.parse(data);
+                        if (match["Status"] == 200) {
+                            // -----------------------------导航栏----------------------------
+                            var name = document.createElement('li');
+                            name.classList.add("name");
+                            name.innerHTML = localStorage.getItem("Name");
+                            var a = document.body.childNodes[3].childNodes[1].childNodes[11].childNodes[0];
+                            a.href = "../Center/user.html";
+                            var img = document.createElement('img');
+                            img.src = localStorage.getItem("ImagePath");
+                            img.classList.add("image");
+                            a.appendChild(img);
+                            console.log(document.body.childNodes[3].childNodes[1]);
+                            document.body.childNodes[3].childNodes[1].insertBefore(name, document.body.childNodes[3].childNodes[1].childNodes[11]);
+                            // document.body.childNodes[1].childNodes[1].appendChild(a);
+                            
+                            // ---------------------------------------------------------------
+
+                            match = match["Match"];
+                            for (var i = 0; i < match.length; i++) {
+                                var match1 = document.createElement('div');
+                                match1.id = "match";
+                                var title = document.createElement('p');
+                                title.innerHTML = match[i].Title;
+                                var hr = document.createElement('hr');
+                                var date = document.createElement('p');
+                                date.innerHTML = "比赛时间：" +   match[i].Date;
+                                var deadline = document.createElement('p');
+                                deadline.innerHTML = "截止时间：" +  match[i].Deadline;
+                                var member = document.createElement('p');
+                                member.innerHTML = "参赛对象：" + match[i].Member;
+                                var link = document.createElement('p');
+                                link.innerHTML = "详情链接：" + match[i].Link;
+                                var container = document.getElementById('container');
+                                container.appendChild(match1);
+                                match1.appendChild(title);
+                                match1.appendChild(hr);
+                                match1.appendChild(date);
+                                match1.appendChild(deadline);
+                                match1.appendChild(member);
+                                match1.appendChild(link);
+                            } 
+                        } 
+                        else {
+                            alert(match["Msg"]);
+                        }
+                    } 
+                    else
+                        alert("网络不稳定，请重试！");
+                }
+            };
+            xmlhttp.open("get", "./matchInfo.jsp", true);
+            xmlhttp.send(null);
+        }
+
+        window.onload = get();
+    </script>
+</body>
+</html>

@@ -1,0 +1,88 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>post</title>
+    <style>
+        form {
+            padding-left: 20px;
+        }
+
+        p {
+            font-size: 22px;
+            font-family: "微软雅黑";
+            text-align: center;
+        }
+
+        span {
+            vertical-align: top;
+            font-size: 20px;
+            font-family: "微软雅黑";
+        }
+
+        #title,#date,#member,#link {
+            width: 650px;
+            height: 28px;
+            font-size: 18px;
+            font-family: "微软雅黑";
+        }
+
+        #deadline {
+            width: 610px;
+            height: 28px;
+            font-size: 18px;
+            font-family: "微软雅黑";
+        }
+
+        #submit {
+            margin-left: 350px;
+            height: 35px;
+            width: 100px;
+            font-size: 20px;
+            background-color: #867AB7;
+            color: #FFFFFF;
+            border-radius: 4px;
+            border: 1px solid #797979;
+            opacity: 0.8;
+        }
+    </style>
+</head>
+<body>
+    <p>提交资讯</p>
+    <span>标题：</span><input id="title" type="text"> <br><br>
+    <span>时间：</span><input id="date" type="text"> <br><br>
+    <span>截止日期：</span><input id="deadline" type="text"> <br><br>
+    <span>成员：</span><input id="member" type="text"> <br><br>
+    <span>链接：</span><input id="link" type="text"> <br><br>
+    <input id="submit" type="submit" value="发布" onclick="posttext(this)">
+    <script>
+        function posttext(btn) {
+            var title = document.getElementById("title");
+            var date = document.getElementById("date");
+            var deadline = document.getElementById("deadline");
+            var member = document.getElementById("member");
+            var link = document.getElementById("link");
+            var param = "Name=" + localStorage.getItem("Name") + "&Title=" + title.value + "&Date=" + date.value + "&Deadline=" + deadline.value + "&Member=" + member.value + "&Link=" + link.value;
+            var xmlhttp = new XMLHttpRequest();
+            xmlhttp.onreadystatechange = function () {
+                if (xmlhttp.readyState == 4) {
+                    if (xmlhttp.status >= 200 && xmlhttp.status < 300) {
+                        var data = xmlhttp.responseText;
+                        var jsonResponse = JSON.parse(data);
+                        if (jsonResponse["Status"] == 200) {//提交成功就+1
+                            alert("资讯提交成功！");
+                        } else {
+                            alert(jsonResponse["Msg"]);
+                        }
+                    }
+                    else
+                        alert("网络不稳定，请重试！");
+                }
+            };
+            xmlhttp.open("post", "./matchPost.jsp", true);
+            xmlhttp.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+            xmlhttp.send(param);
+        }
+    </script>
+</body>
+</html>

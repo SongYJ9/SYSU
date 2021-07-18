@@ -1,0 +1,29 @@
+﻿<!DOCTYPE HTML>
+<html>
+<head>
+    <meta content="text/html;charset=utf-8">
+    <title>diamond</title>
+    <style>
+    .diamond1 {
+         -webkit-clip-path: polygon(80% 0, 100% 100%, 0 100%, 20% 0);
+         background-color: red;
+         width: 100px;
+         height: 20px;
+         position: relative;
+    }
+    .diamond2 {
+         background-color: red;
+         -webkit-clip-path: polygon(0 0, 50% 100%, 100% 0);
+         width: 100px;
+         height: 80px;
+         position: relative;
+         content: "";
+         top: -1px;
+    }
+    </style>  
+</head>
+<body>
+    <div class="diamond1"></div>
+    <div class="diamond2"></div>
+</body>
+</html>

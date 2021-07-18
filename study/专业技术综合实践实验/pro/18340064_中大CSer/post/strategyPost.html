@@ -1,0 +1,83 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>post</title>
+    <style>
+        form {
+            padding-left: 20px;
+        }
+
+        p {
+            font-size: 22px;
+            font-family: "微软雅黑";
+            text-align: center;
+        }
+
+        span {
+            vertical-align: top;
+            font-size: 20px;
+            font-family: "微软雅黑";
+        }
+
+        #title {
+            width: 650px;
+            height: 28px;
+            font-size: 18px;
+            font-family: "微软雅黑";
+        }
+
+        textarea {
+            width: 650px;
+            height: 190px;
+            font-size: 18px;
+            font-family: "微软雅黑";
+        }
+
+        #submit {
+            margin-left: 350px;
+            height: 35px;
+            width: 100px;
+            font-size: 20px;
+            background-color: #867AB7;
+            color: #FFFFFF;
+            border-radius: 4px;
+            border: 1px solid #797979;
+            opacity: 0.8;
+        }
+    </style>
+</head>
+<body>
+    <p>发布攻略帖</p>
+    <span>标题：</span><input id="title" type="text"> <br><br>
+    <span>内容：</span><textarea rows="6" cols="36" id="content" placeholder="在这里输入内容"></textarea>
+    <br><br>
+    <input id="submit" type="submit" value="发布" onclick="posttext(this)">
+    <script>
+        function posttext(btn) {
+            var title = document.getElementById("title");
+            var content = document.getElementById("content");
+            var param = "Name=" + localStorage.getItem("Name") + "&Title=" + title.value + "&Content=" + content.value;
+            var xmlhttp = new XMLHttpRequest();
+            xmlhttp.onreadystatechange = function () {
+                if (xmlhttp.readyState == 4) {
+                    if (xmlhttp.status >= 200 && xmlhttp.status < 300) {
+                        var data = xmlhttp.responseText;
+                        var jsonResponse = JSON.parse(data);
+                        if (jsonResponse["Status"] == 200) {//提交成功就+1
+                            alert("帖子发布成功！");
+                        } else {
+                            alert(jsonResponse["Msg"]);
+                        }
+                    }
+                    else
+                        alert("网络不稳定，请重试！");
+                }
+            };
+            xmlhttp.open("post", "./strategyPost.jsp", true);
+            xmlhttp.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+            xmlhttp.send(param);
+        }
+    </script>
+</body>
+</html>

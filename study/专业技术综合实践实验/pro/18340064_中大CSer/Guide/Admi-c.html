@@ -1,0 +1,117 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>Python_Guide</title>
+    <link rel="stylesheet" type="text/css" href="../css/nav.css" />
+    <link rel="stylesheet" type="text/css" href="../css/awesome/font-awesome.css" />
+    <link rel="stylesheet" type="text/css" href="./guide.css" />
+</head>
+<body>
+    <div id="post">
+        <input id="X" type="button" onclick="close1(this)" value="X">
+        <iframe id="ifr" frameborder="0" width="800" height="400" src=""></iframe>
+    </div>
+    <div class= "container">
+        <div id="nav_outer">
+            <ul class="wrapper" id="nav">
+                <li class="CSer" style="color: #FFFFFF; ">中大CSer</li>
+                <li><a href="../Guide/Admi-c.html">指南</a></li>
+                <li><a href="../Resources/adminResources.html">资源</a></li>
+                <li><a href="#">资讯</a><i class="fa fa-caret-down logo"></i>
+                    <ul class="subnav">
+                        <li><a href="../Info/Admi-matchInfo.html">比赛</a></li>
+                        <li><a href="../Info/Admi-jobInfo.html">招聘</a></li>
+                    </ul>
+                </li>
+                <li><a href="#">论坛</a><i class="fa fa-caret-down logo"></i>
+                    <ul class="subnav">
+                        <li><a href="../Forum/Admi-questionForum.html">问题</a></li>
+                        <li><a href="../Forum/Admi-strategyForum.html">攻略</a></li>
+                    </ul>
+                </li>
+                <li class="lastli"><a href="#"></a>
+                    <ul class="subnav">
+                        <li><a><input class="btn" type="button" value="发布攻略帖" onclick="window1(1)"></a></li>
+                        <li><a><input class="btn" type="button" value="发布问题贴" onclick="window1(2)"></a></li>
+                        <li><a><input class="btn" type="button" value="发布资源" onclick="window1(3)"></a></li>
+                        <li><a><input class="btn" type="button" value="发布比赛资讯" onclick="window1(4)"></a></li>
+                        <li><a><input class="btn" type="button" value="发布招聘资讯" onclick="window1(5)"></a></li>
+                        <li><a href="../Info/matchReview.html">审核比赛资讯</a></li>
+                        <li><a href="../Info/jobReview.html">审核招聘资讯</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+        <div class="left">
+            <button onclick="window.location.href = 'Admi-c.html'">C程序设计</button>
+            <button onclick="window.location.href = 'Admi-cplusplus.html'">C++程序设计</button>
+            <button onclick="window.location.href = 'Admi-python.html'">Python</button>
+            <button onclick="window.location.href = 'Admi-java.html'">Java</button>
+        </div>
+        <div class="middle">
+            <h1 id="title">C程序设计</h1>
+            <h2 id="para1">什么是C语言？</h2>
+            <p>C语言是一种计算机程序设计语言，它既具有高级语言的特点，又具有汇编语言的特点。它由美国贝尔研究所的D.M.Ritchie于1972年推出，1978年后，C语言已先后被移植到大、中、小及微型机上，它可以作为工作系统设计语言，编写系统应用程序，也可以作为应用程序设计语言，编写不依赖计算机硬件的应用程序。它的应用范围广泛，具备很强的数据处理能力，不仅仅是在软件开发上，而且各类科研都需要用到C语言，适于编写系统软件，三维，二维图形和动画，具体应用比如单片机以及嵌入式系统开发。</p>
+            <p>C语言的发展历史可以追溯到1961年的ALGOL 60，它是C语言的祖先。ALGOL 60是一种面向问题的高级语言，与计算机硬件的距离比较远，不适合用来编写系统软件。1963年，英国剑桥大学推出了CPL（Combined Programming Language）。CPL对ALGOL 60进行了改造，在ALGOL 60基础上接近硬件一些，但是规模较大，难以实现。1967年，英国剑桥大学的Martin Richards对CPL进行了简化，在保持CPL的基本优点的基础上推出了BCPL（Basic Combined Programming Language）。1970～1971年，美国AT&T公司贝尔实验室的Ken Thompson对BCPL进行进一步简化，设计出了非常简单而且很接近硬件的B语言（取BCPL的第一个字母），并用B语言改写了UNIX操作系统。但B语言过于简单，且功能有限。1972～1973年，贝尔实验室的Dennis M. Ritchie在B语言的基础上设计出了C语言（取BCPL的第二个字母）。C语言既保持了BCPL和B语言的优点（精练、接近硬件），又克服了它们的缺点（过于简单、无数据类型等）。最初的C语言只是为了描述和实现UNIX操作系统提供一种工作语言而设计的。1973年，Ken Thompson和Dennis M. Ritchie两人合作把UNIX中90%以上的代码用C语言改写，即UNIX第5版（最初的UNIX操作系统全部采用PDP-7汇编语言编写）。
+                后来，C语言历经多次改进，但主要还是在贝尔实验室内部使用。直到1975年，UNIX第6版公布以后，C语言的突出优点才引起人们的普遍关注。1975年，不依赖于具体机器的C语言编译文本（可移植C语言编译程序）出现了，使C语言移植到其他机器时所需做的工作大大简化，这也推动了UNIX操作系统迅速在各种机器上实现。随着UNIX的广泛使用，C语言也迅速得到推广。C语言和UNIX可以说是一对孪生兄弟，在发展过程中相辅相成。1978年以后，C语言已先后移植到大、中、小和微型计算机上，已独立于UNIX和PDP计算机了。
+                现在，C语言已风靡全世界，成为世界上应用最广泛的几种计算机语言之一。许多系统软件和实用的软件包，如Microsoft Windows等，都是用C语言编写的。图1-2表示了C语言的“家谱”。</p>
+            <h2 id="para2">C语言的应用领域</h2>
+            <p>C语言的应用领域分两大块：系统软件开发和应用软件开发。其中C语言最主要用于编写系统软件，编写应用软件不是它的强项。C语言最著名的应用领域就是操作系统了，目前所有的操作系统内核都是C语言写的，最著名的就是Unix和Linux了。由于C语言在位操作上的优越性，在单片机领域，C语言也一直独领风骚，虽然现在出现了一些用其他编程语言操作单片机的方法，但也都是用C语言封装过的，可以说核心还是C语言。由于C语言没有成熟的开发框架，所以不适合开发大型应用程序。但也有一些对效率要求比较高的程序使用C语言开发，如Git。</p>
+            <h2 id="para3">C语言的优缺点</h2>
+            <p>C语言是当前最受欢迎的程序设计语言之一。然而由于C语言用以编写操作系统和其他系统软件的预期用途及自身的基础理论体系，C语言也具有其固有的优缺点。C语言的优点主要包括以下几个方面:高效性。C语言生成目标代码的效率高，一般只比汇编程序生成的目标代码效率低10%-20%，执行快速且占用内存少;功能强大。C语言具有丰富的数据类型和运算符，表达能力、计算能力和逻辑判断功能强大;可移植性。标准化有效地促进了C程序在各类C语言编译器间的可移植性。同时C语言编译器规模小且容易编写也有力地支撑了C程序跨硬件、跨操作系统的可移植性。C语言的缺点主要有以下两点：C语言的灵活性是把双刃剑，用得不好的话会使C程序漏洞百出，安全性难以保证。C语言的灵活性也带来了应用方式的多样性，造成程序可能难以理解;难以修改。C语言缺乏封装机制，如果在后期发现设计中的问题，程序将难以修改。C语言缺乏对数据的封装，也是出现安全性问题的一个重要原因。</p>
+            <h2 id="para4">更多资料</h2>
+            <p>你可以从<a href="https://baike.baidu.com/item/c%E8%AF%AD%E8%A8%80/105958?fromtitle=c&fromid=7252092&fr=aladdin">百度百科</a>中了解到更多关于C语言的发展历史和应用领域等基础信息。如果你想要再深入学习C语言，你也可以从<a href="https://www.csdn.net/">CSDN</a>和<a href="https://www.cnblogs.com/">博客园</a>中搜索你想要了解的知识。</p>
+        </div>
+        <div class="right">
+            <div class="right-son">
+                <p><a href=#title>C程序设计</a></p>
+                <p><a href=#para1>什么是C语言？</a></p>
+                <p><a href=#para2>C语言的应用领域</a></p>
+                <p><a href=#para3>C语言的优缺点</a></p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function window1(i) {
+            var post = document.getElementById("post");
+            var container = post.parentNode;
+            var ifr = document.getElementById("ifr");
+            container.style.backgroundColor = "gray";
+            container.style.opacity = "80%";
+            if (i == 1)//发帖
+                ifr.src = "../post/strategyPost.html";
+            else if (i == 2)//发帖
+                ifr.src = "../post/problemPost.html";
+            else if (i == 3)//资源
+                ifr.src = "../post/resourceUpload.jsp";
+            else if (i == 4)//资讯
+                ifr.src = "../post/matchPost.html";
+            else if (i == 5)//资讯
+                ifr.src = "../post/jobPost.html";
+            post.style.display = "block";
+        }
+        function close1(btn) {
+            var post = btn.parentNode;
+            post.style.display = "none";
+            var container = btn.parentNode.parentNode;
+            container.style.backgroundColor = "transparent";
+        }
+        function set() {
+            var name = document.createElement('li');
+            name.classList.add("name");
+            name.innerHTML = localStorage.getItem("Name");
+            var a = document.body.childNodes[3].childNodes[1].childNodes[1].childNodes[11].childNodes[0];
+            a.href = "../Center/admin.html";
+            var img = document.createElement('img');
+            img.src = localStorage.getItem("ImagePath");
+            img.classList.add("image");
+            a.appendChild(img);
+            // console.log(document.body.childNodes[3].childNodes[1].childNodes[1].childNodes[11]);
+            document.body.childNodes[3].childNodes[1].childNodes[1].insertBefore(name, document.body.childNodes[3].childNodes[1].childNodes[1].childNodes[11]);
+        }
+
+        window.onload = set();
+    </script>
+</body>
+</html>

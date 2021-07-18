@@ -1,0 +1,113 @@
+﻿<!DOCTYPE html>
+<html>
+    <head>
+        <title>Python_Guide</title>
+        <link rel="stylesheet" type="text/css" href="../css/nav.css" />
+        <link rel="stylesheet" type="text/css" href="../css/awesome/font-awesome.css" />
+        <link rel="stylesheet" type="text/css" href="./guide.css" />
+    </head>
+    <body>
+        <div id="post">
+            <input id="X" type="button" onclick="close1(this)" value="X">
+            <iframe id="ifr" frameborder="0" width="800" height="400" src=""></iframe>
+        </div>
+        <div class= "container">
+            <div id="nav_outer">
+                <ul class="wrapper" id="nav">
+                    <li class="CSer" style="color: #FFFFFF; ">中大CSer</li>
+                    <li><a href="../Guide/c.html">指南</a></li>
+                    <li><a href="../Resources/resources.html">资源</a></li>
+                    <li><a href="#">资讯</a><i class="fa fa-caret-down logo"></i>
+                        <ul class="subnav">
+                            <li><a href="../Info/matchInfo.html">比赛</a></li>
+                            <li><a href="../Info/jobInfo.html">招聘</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#">论坛</a><i class="fa fa-caret-down logo"></i>
+                        <ul class="subnav">
+                            <li><a href="../Forum/questionForum.html">问题</a></li>
+                            <li><a href="../Forum/strategyForum.html">攻略</a></li>
+                        </ul>
+                    </li>
+                    <li class="lastli"><a href="#"></a>
+                        <ul class="subnav">
+                            <li><a><input class="btn" type="button" value="发布攻略帖" onclick="window1(1)"></a></li>
+                            <li><a><input class="btn" type="button" value="发布问题贴" onclick="window1(2)"></a></li>
+                            <li><a><input class="btn" type="button" value="发布资源" onclick="window1(3)"></a></li>
+                            <li><a><input class="btn" type="button" value="发布比赛资讯" onclick="window1(4)"></a></li>
+                            <li><a><input class="btn" type="button" value="发布招聘资讯" onclick="window1(5)"></a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        <div class="left">
+            <button onclick="window.location.href = 'c.html'">C程序设计</button>
+            <button onclick="window.location.href = 'cplusplus.html'">C++程序设计</button>
+            <button onclick="window.location.href = 'python.html'">Python</button>
+            <button onclick="window.location.href = 'java.html'">Java</button>
+        </div>
+        <div class="middle">
+            <h1 id="title">C++程序设计</h1>
+            <h2 id="para1">什么是C++？</h2>
+            <p>C++是一门以C为基础发展而来的一门面向对象的高级程序设计语言，从1983年由Bjarne Stroustrup教授在贝尔实验室创立开始至今，已有30多个年头。C++从最初的C with class，经历了从C++98、C++ 03、C++ 11、C++ 14再到C++17多次标准化改造，功能得到了极大的丰富，已经演变为一门集面向过程、面向对象、函数式、泛型和元编程等多种编程范式的复杂编程语言，入门具有一定的难度。由于C++过于复杂，并且经历了长时间的发展演变，目前对于C++标准支持的较好主要有GNU C++和Visual C++，严格来说，目前还没有一个完全支持ISO C++的版本。</p>
+            <p>第一个版本的C++，因其面向对象的思想使得编程变得简单，并且又保持了C语言的运行效率，在推出的一段时间内，得到了快速的发展，占据了编程语言界的半壁江山。从1985年到1998年，C++从最初的C with Classes新增了很多其他的特性，比如异常处理、模板、标准模板库（STL）、运行时异常处理（RTTI）与名字空间（Namespace）等。1998年，C++标准委员会统筹C++的所有特性，发布了第一个C++国际标准C++98。从1998年到2003年，是C++标准从C++98到C++03的迭代期，期间C++扩增了很多额外的特性，比如以Boost MPL（Boost Metaprogramming Library）与Loki等为代表的模板元编程库的出现，让开发者更加便捷的使用C++在编译期的执行能力，即通过代码编译获得计算结果，学术性的称为模板元编程。到了2003年，C++标准委员会总结最新技术并发布了C++03标准。从2003年到2011年，也就是从C++03到C++11，期间C++引入了对象移动、右值引用、lamba表达式（函数式编程）、编译时类型识别（auto）、别名模板以及很多新型关键词（如nullptr、decltype、constexpr）等现代编程语言常具备的能力，让C++与时俱进，开发效率得到了很大的提升。这些新的特性随着C++11标准的发布而被正式确立下来。近年来，C++标准的变更周期缩短，由C++11到C++14以及最近的C++17都只用了3年的时间。C++14引入了二进制文字常量、将类型推导从Lambda函数扩展到所有函数、变量模板以及数字分位符等。C++14 是对 C++11的重要补充和优化，是C++发展历程中的一个小型版本，虽然新增的内容较少，但是仍然为用户“带来了极大的方便”，为实现使C++“对新手更为友好”这一目标作出努力。到了2017年，C++迎来了C++17标准。此次对C++的改进和扩增，让C++变得更加容易接受和便于使用了。C++17引入了许多新的特性，比如类模板参数推导、UTF-8文字常量、fold表达式、新类型以及新的库函数等。</p>
+            <h2 id="para2">C++的应用领域</h2>
+            <p>C++ 的应用领域目前有三大类，第一类就是我们目前见到的各种桌面应用软件，尤其 Windows 桌面软件，如 QQ、安全类杀毒类软件（如金山的安全卫士，已开源，其代码地址：http://code.ijinshan.com/source/source.html）、各种浏览器等；另外就是一些基础软件和高级语言的运行时环境，如大型数据库软件、Java 虚拟机、C# 的 CLR、Python 编译器和运行时环境等；第三类就是一些业务型应用软件的后台，像游戏的服务器后台，如魔兽世界的服务器（代码地址：https://github.com/azerothcore/azerothcore-wotlk）和一些企业内部的应用系统。</p>
+            <h2 id="para3">C++的优缺点</h2>
+            <p>C++具有许多优点：C/C++可以潜入任何现代处理器中，几乎所有的操作系统都支持C/C++,跨平台性非常好。C语言体型小巧，简洁高效并且接近汇编语言，C++功能在C的基础上增加面向对象的特点，代码可读性好，运行效率高。运行效率高，高效安全。语言简洁，编写风格自由。大项目上具有优势。但是它也有着比较明显的缺点：相对于JAVA来说，没有垃圾回收机制，容易引发内存泄露；内容较多而且较难，学习起来相对困难。</p>
+            <h2 id="para4">更多资料</h2>
+            <p>你可以从<a href="https://baike.baidu.com/item/C++/99272">百度百科</a>中了解到更多关于C++的发展历史和应用领域等基础信息。如果你想要再深入学习C++，你也可以从<a href="https://www.csdn.net/">CSDN</a>和<a href="https://www.cnblogs.com/">博客园</a>中搜索你想要了解的知识。</p>
+        </div>
+        <div class="right">
+            <div class="right-son">
+                <p><a href=#title>C++程序设计</a></p>
+                <p><a href=#para1>什么是C++？</a></p>
+                <p><a href=#para2>C++的应用领域</a></p>
+                <p><a href=#para3>C++的优缺点</a></p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function window1(i) {
+            var post = document.getElementById("post");
+            var container = post.parentNode;
+            var ifr = document.getElementById("ifr");
+            container.style.backgroundColor = "gray";
+            container.style.opacity = "80%";
+            if (i == 1)//发帖
+                ifr.src = "../post/strategyPost.html";
+            else if (i == 2)//发帖
+                ifr.src = "../post/problemPost.html";
+            else if (i == 3)//资源
+                ifr.src = "../post/resourceUpload.jsp";
+            else if (i == 4)//资讯
+                ifr.src = "../post/matchPost.html";
+            else if (i == 5)//资讯
+                ifr.src = "../post/jobPost.html";
+            post.style.display = "block";
+        }
+        function close1(btn) {
+            var post = btn.parentNode;
+            post.style.display = "none";
+            var container = btn.parentNode.parentNode;
+            container.style.backgroundColor = "transparent";
+        }
+        function set() {
+            var name = document.createElement('li');
+            name.classList.add("name");
+            name.innerHTML = localStorage.getItem("Name");
+            var a = document.body.childNodes[3].childNodes[1].childNodes[1].childNodes[11].childNodes[0];
+            a.href = "../Center/user.html";
+            var img = document.createElement('img');
+            img.src = localStorage.getItem("ImagePath");
+            img.classList.add("image");
+            a.appendChild(img);
+            // console.log(document.body.childNodes[3].childNodes[1].childNodes[1].childNodes[11]);
+            document.body.childNodes[3].childNodes[1].childNodes[1].insertBefore(name, document.body.childNodes[3].childNodes[1].childNodes[1].childNodes[11]);
+        }
+
+        window.onload = set();
+    </script>
+</body>
+</html>

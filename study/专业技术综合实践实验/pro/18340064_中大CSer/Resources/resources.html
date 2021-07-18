@@ -1,0 +1,357 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>User center</title>
+        <link rel="stylesheet" type="text/css" href="../css/awesome/font-awesome.css" />
+        <link rel="stylesheet" type="text/css" href="./resources.css" />
+    </head>
+
+    <body>
+        <div id="post">
+            <input id="X" type="button" onclick="close1(this)" value="X">
+            <iframe id="ifr" frameborder="0" width="800" height="400" src=""></iframe>
+        </div>
+        <div id="nav_outer">
+            <ul class="wrapper" id="nav">
+                <li class="CSer" style="color: #FFFFFF; ">中大CSer</li>
+                <li><a href="../Guide/c.html">指南</a></li>
+                <li><a href="../Resources/resources.html">资源</a></li>
+                <li><a href="#">资讯</a><i class="fa fa-caret-down logo"></i>
+                    <ul class="subnav">
+                        <li><a href="../Info/matchInfo.html">比赛</a></li>
+                        <li><a href="../Info/jobInfo.html">招聘</a></li>
+                    </ul>
+                </li>
+                <li><a href="#">论坛</a><i class="fa fa-caret-down logo"></i>
+                    <ul class="subnav">
+                        <li><a href="../Forum/questionForum.html">问题</a></li>
+                        <li><a href="../Forum/strategyForum.html">攻略</a></li>
+                    </ul>
+                </li>
+                <li class="lastli"><a href="#"></a>
+                    <ul class="subnav">
+                        <li><a><input class="btn" type="button" value="发布攻略帖" onclick="window1(1)"></a></li>
+                        <li><a><input class="btn" type="button" value="发布问题贴" onclick="window1(2)"></a></li>
+                        <li><a><input class="btn" type="button" value="发布资源" onclick="window1(3)"></a></li>
+                        <li><a><input class="btn" type="button" value="发布比赛资讯" onclick="window1(4)"></a></li>
+                        <li><a><input class="btn" type="button" value="发布招聘资讯" onclick="window1(5)"></a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+        <div id="container">
+        </div>
+        <script>
+            function window1(i) {
+                var post = document.getElementById("post");
+                var container = post.parentNode;
+                var ifr = document.getElementById("ifr");
+                container.style.backgroundColor = "gray";
+                container.style.opacity = "80%";
+                if (i == 1)//发帖
+                    ifr.src = "../post/strategyPost.html";
+                else if (i == 2)//发帖
+                    ifr.src = "../post/problemPost.html";
+                else if (i == 3)//资源
+                    ifr.src = "../post/resourceUpload.jsp";
+                else if (i == 4)//资讯
+                    ifr.src = "../post/matchPost.html";
+                else if (i == 5)//资讯
+                    ifr.src = "../post/jobPost.html";
+                post.style.display = "block";
+            }
+            function close1(btn) {
+                var post = btn.parentNode;
+                post.style.display = "none";
+                var container = btn.parentNode.parentNode;
+                console.log(container);
+                container.style.backgroundColor = "transparent";
+                container.style.opacity = 1.0;
+                // container.removeAttr("style.")
+            }
+            var data = JSON.stringify({"Status":200, "Msg": "success", "ImagePath": "../images/user/user.png",
+                                        "File": [
+                                            {
+                                                "Name": "HTML.pdf",
+                                                "Path": "../1/Html.pdf",
+                                            },
+                                            {
+                                                "Name": "CSS.pdf",
+                                                "Path": "../1/CSS.pdf",
+                                            }
+                                        ]});
+            var newdata = JSON.stringify({"Status":200, "Msg": "success", "ImagePath": "../images/user/user.png",
+                                        "File": [
+                                            {
+                                                "Name": "HTMLnew.pdf",
+                                                "Path": "../1/Htmlnew.pdf",
+                                            },
+                                            {
+                                                "Name": "CSSnew.pdf",
+                                                "Path": "../1/CSSnew.pdf",
+                                            }
+                                        ]});
+
+            function search() {
+                var search = document.getElementById("search");
+                var param = "";
+                if(module == null) {
+                    param = "./file2.jsp?Modules=1&File=" + search.value;
+                } else {
+                    param = "./file2.jsp?Modules=" + document.getElementById("module").options[module.selectedIndex].value 
+                                + "&File=" + search.value;
+                }
+                var xmlhttp = new XMLHttpRequest();
+                xmlhttp.onreadystatechange = function() {
+                    if (xmlhttp.readyState == 4) {
+                        if (xmlhttp.status >= 200 && xmlhttp.status < 300 ) {
+                            var data = xmlhttp.responseText;
+                            var jsonResponse = JSON.parse(data);
+                            if (jsonResponse["Status"] == 200) {
+                                var main_outer = document.getElementById("main_outer"); 
+                                var childs = main_outer.childNodes; 
+                
+                                // 删除原先的文件结点
+                                let length = childs.length;
+                                for(var i = 1; i < length; i++) { 
+                                    main_outer.removeChild(childs[1]); 
+                                }
+                                // ---------------------------body 的文件显示 -------------------------------
+                                var File = jsonResponse["File"];
+                                console.log(File)
+                                for (let i = 0; i < File.length; i++) {
+                                    var row = document.createElement("div");
+                                    row.classList.add("row");
+                                        var p = document.createElement("span");
+                                        p.classList.add("file");
+                                        p.innerHTML = File[i]["Name"];
+                                        var download = document.createElement("a");
+                                        download.classList.add("download");
+                                        download.classList.add("font");
+                                        download.href = File[i]["Path"];
+                                        download.innerHTML = "下载";
+                                        
+                                    row.appendChild(p);
+                                    row.appendChild(download);
+                                    main_outer.appendChild(row);
+                                }
+
+                                document.body.appendChild(main_outer);
+                            } else {
+                                alert(jsonResponse["Msg"]);
+                            }
+                        } else
+                            alert("网络不稳定，请重试！");
+                    }
+                };
+                xmlhttp.open("get", param, true);
+                xmlhttp.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+                xmlhttp.send(null);
+            }
+            
+
+            function testselectModules() {
+                var module = document.getElementById("module");
+                var index = module.selectedIndex ; 
+                console.log(module.options[index].value);
+                var main_outer = document.getElementById("main_outer"); 
+                var childs = main_outer.childNodes; 
+ 
+                // 删除原先的文件结点
+                let length = childs.length;
+                for(var i = 1; i < length; i++) { 
+                    main_outer.removeChild(childs[1]); 
+                }
+                var jsonResponse = JSON.parse(newdata);
+                // ---------------------------body 的文件显示 -------------------------------
+                var File = jsonResponse["File"];
+                for (let i = 0; i < File.length; i++) {
+                    var row = document.createElement("div");
+                    row.classList.add("row");
+                        var p = document.createElement("p");
+                        p.classList.add("file");
+                        p.innerHTML = File[i]["Name"];
+                        var download = document.createElement("a");
+                        download.classList.add("download");
+                        download.classList.add("font");
+                        download.href = File[i]["Path"];
+                        download.innerHTML = "下载";
+                        
+                    row.appendChild(p);
+                    row.appendChild(download);
+                    main_outer.appendChild(row);
+                }
+
+                document.body.appendChild(main_outer);
+            }
+
+            function selectModules() {
+                var module = document.getElementById("module");
+                var index = module.selectedIndex ; 
+                // console.log(module.options[index].value);
+                var param = "Modules=" + module.options[index].value;
+                var xmlhttp = new XMLHttpRequest();
+                xmlhttp.onreadystatechange = function() {
+                    if (xmlhttp.readyState == 4) {
+                        if (xmlhttp.status >= 200 && xmlhttp.status < 300 ) {
+                            var data = xmlhttp.responseText;
+                            var jsonResponse = JSON.parse(data);
+                            // console.log(jsonResponse);
+                            if (jsonResponse["Status"] == 200) {
+                                var main_outer = document.getElementById("main_outer"); 
+                                var childs = main_outer.childNodes; 
+                
+                                // 删除原先的文件结点
+                                let length = childs.length;
+                                for(var i = 1; i < length; i++) { 
+                                    main_outer.removeChild(childs[1]); 
+                                }
+                                // ---------------------------body 的文件显示 -------------------------------
+                                var File = jsonResponse["File"];
+                                console.log(File)
+                                for (let i = 0; i < File.length; i++) {
+                                    var row = document.createElement("div");
+                                    row.classList.add("row");
+                                        var p = document.createElement("span");
+                                        p.classList.add("file");
+                                        p.innerHTML = File[i]["Name"];
+                                        var download = document.createElement("a");
+                                        download.classList.add("download");
+                                        download.classList.add("font");
+                                        download.href = File[i]["Path"];
+                                        download.innerHTML = "下载";
+                                        
+                                    row.appendChild(p);
+                                    row.appendChild(download);
+                                    main_outer.appendChild(row);
+                                }
+
+                                document.body.appendChild(main_outer);
+
+                            } else {
+                                alert(jsonResponse["Msg"]);
+                            }
+                        } else
+                            alert("网络不稳定，请重试！");
+                    }
+                };
+                xmlhttp.open("post", "./file1.jsp", true);
+                xmlhttp.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+                xmlhttp.send(param);
+            }
+            
+            function getInfo() {
+                var param = "Modules=1";
+                var xmlhttp = new XMLHttpRequest();
+                xmlhttp.onreadystatechange = function() {
+                    if (xmlhttp.readyState == 4) {
+                        if (xmlhttp.status >= 200 && xmlhttp.status < 300 ) {
+                            var data = xmlhttp.responseText;
+                            var jsonResponse = JSON.parse(data);
+                            if (jsonResponse["Status"] == 200) {
+                                // -----------------------------导航栏----------------------------
+                                var name = document.createElement('li');
+                                name.classList.add("name");
+                                name.innerHTML = localStorage.getItem("Name");
+                                var a = document.body.childNodes[3].childNodes[1].childNodes[11].childNodes[0];
+                                a.href = "../Center/user.html";
+                                var img = document.createElement('img');
+                                img.src = localStorage.getItem("ImagePath");
+                                img.classList.add("image");
+                                a.appendChild(img);
+                                // console.log(document.body.childNodes[3].childNodes[1]);
+                                document.body.childNodes[3].childNodes[1].insertBefore(name, document.body.childNodes[3].childNodes[1].childNodes[11]);
+                                // document.body.childNodes[1].childNodes[1].appendChild(a);
+                                
+                                // ----------------------------body 的模块-------------------------------
+                                var main_outer = document.createElement("div")
+                                main_outer.setAttribute("id", "main_outer");
+                                    var head = document.createElement("div");
+                                    head.classList.add("head");
+                                        var select = document.createElement("select");
+                                        select.setAttribute("id", "module");
+                                        select.classList.add("modules");
+                                        select.setAttribute("onchange","selectModules()");
+                                            var option1 = document.createElement("option");
+                                            option1.setAttribute("value", "1");
+                                            option1.classList.add("font");
+                                            option1.innerHTML = "专业技术";
+                                            var option2 = document.createElement("option");
+                                            option2.setAttribute("value", "2");
+                                            option2.classList.add("font");
+                                            option2.innerHTML = "计算机网络";
+                                        select.appendChild(option1);
+                                        select.appendChild(option2);
+                                        var search = document.createElement("input");
+                                        search.setAttribute("type", "search");
+                                        search.setAttribute("id", "search");
+                                        search.setAttribute("value", "");
+                                        search.classList.add("search");
+                                        search.classList.add("font");
+                                        var searchButton = document.createElement("input");
+                                        searchButton.setAttribute("type", "button");
+                                        searchButton.setAttribute("value", "搜索");
+                                        searchButton.setAttribute("onclick", "search()");
+                                        searchButton.classList.add("font");
+                                        searchButton.classList.add("searchButton");
+                                    head.appendChild(select);
+                                    head.appendChild(search);
+                                    head.appendChild(searchButton);
+                                main_outer.appendChild(head);        
+                                
+
+                                // ---------------------------body 的文件显示 -------------------------------
+                                var File = jsonResponse["File"];
+                                for (let i = 0; i < File.length; i++) {
+                                    var row = document.createElement("div");
+                                    row.classList.add("row");
+                                        var p = document.createElement("span");
+                                        p.classList.add("file");
+                                        p.innerHTML = File[i]["Name"];
+                                        var download = document.createElement("a");
+                                        download.classList.add("download");
+                                        download.classList.add("font");
+                                        download.href = File[i]["Path"];
+                                        download.innerHTML = "下载";
+                                        
+                                    row.appendChild(p);
+                                    row.appendChild(download);
+                                    main_outer.appendChild(row);
+                                }
+
+                                document.body.appendChild(main_outer);
+
+                            } else {
+                                alert(jsonResponse["Msg"]);
+                            }
+                        }
+                        else
+                            alert("网络不稳定，请重试！");
+                    }
+                };
+                xmlhttp.open("post", "./file1.jsp", true);
+                xmlhttp.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+                xmlhttp.send(param);
+        }
+            window.onload = getInfo();
+        </script>
+    </body>
+
+</html>
+
+
+        <!-- <div id="main_outer">
+            <div class="head">
+                <select class="modules" id="module" onchange="selectModules()">
+                    <option value="1" class="font">专业技术</option>
+                    <option value="2" class="font">计算机网络</option>
+                </select>
+                <input type="search" class="search font"/>
+                <input type="button" value="搜索" class="font searchButton"/>
+            </div>
+            <div class="row">
+                <p class="file">C Primer Plus-第六版中文.pdf</p>
+                <a href="#" class="download font">下载</a>
+            </div>
+        </div> -->

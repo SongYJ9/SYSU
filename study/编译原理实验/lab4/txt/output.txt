@@ -1,0 +1,58 @@
+METHOD f1
+BEGIN
+   RETURN TYPE INT
+   PARAM INT x
+   INT i
+   INT ans
+   i := 0.00
+LABEL L1
+   t1 := i < x
+   IFZ t1 GOTO LABEL L2
+   INT hello
+   ans := ans + i
+   i := i + 1.00
+   GOTO LABEL L1
+LABEL L2
+   REAL hello2
+   RETURN ans
+END
+
+METHOD f2
+BEGIN
+   RETURN TYPE INT
+   PARAM INT x INT y
+   INT z
+   t1 := x * x
+   t2 := y / y
+   z := t1 - t2
+   t1 := x != y
+   IFZ t1 GOTO L3
+   z := z + x
+LABEL L3
+   RETURN z
+END
+
+MAIN METHOD f
+BEGIN
+   RETURN TYPE INT
+   INT x
+   READ "A41.input" to x
+   INT y
+   READ "A42.input" to y
+   INT z
+   ARG x
+   CALL f1 TO t1
+   ARG y
+   ARG x
+   CALL f2 TO t2
+   z := t1 + t2
+LABEL L4
+   t1 := x > y
+   IFZ t1 GOTO LABEL L5
+   t1 := x % y
+   z := z ^ t1
+   x := x - y
+   GOTO LABEL L4
+LABEL L5
+   WRITE "A4.output" from z
+END

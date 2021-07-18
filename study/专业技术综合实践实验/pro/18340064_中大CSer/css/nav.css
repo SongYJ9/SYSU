@@ -1,0 +1,137 @@
+* { font-size:12px;font-family:宋体;line-height:1.2em;text-align:center;}
+a:link, a:visited, a:hover, a:active {text-decoration: none;}
+
+.wrapper {
+    margin: 0 auto;
+    width: 980px;
+    position: relative;
+}
+
+#nav_outer li {list-style-type: none; float: left;}
+
+/* 最外面的紫色边框 */
+#nav_outer {
+    height: 50px;
+    background-color: #2C074D;
+    position: fixed;
+    top:0px;
+    width: 100%;
+    left:-1px;
+    border:1px solid #2C074D;
+    /* margin-left: 100px; */
+}
+
+/* 紫色框里面的字体 */
+#nav > li {
+    position: relative;
+    height: 30px;
+    color: #AEA5B9;
+}
+
+/* 紫色边框里面的字体 */
+#nav > li > a {
+    font-size: 1.5em;
+    color: #AEA5B9;
+    width: 130px;
+    float: left;
+    margin-top: 10px;
+    height: 35px;
+    font-family: '微软雅黑';
+    padding-top: 5px;
+}
+#nav > li > a:hover {
+    color: #ffffff;
+}
+
+#nav > li > a:hover ~ .logo {
+    color: #ffffff;
+}
+
+/* 下拉框 */
+#nav .subnav {
+    height: 26px;
+    position: absolute;
+    top: 42px;
+    padding-top: 7px;
+    display: none;
+    left: -40px;
+}
+
+/* 下拉框字体 */
+#nav .subnav a {
+    color: #AEA5B9;
+    font-size: 1.25em;
+    font-family: '微软雅黑';
+}
+
+/* 显示选中的下拉框 */
+#nav > li:hover .subnav { 
+    display: block;
+    animation: myfirst;
+    animation-duration: 1s;
+}
+@keyframes myfirst{
+    0% {
+        opacity: 0.1;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+/* 下拉框的框 */
+#nav .subnav li {
+    width: 130px;
+    line-height: 30px;
+    background-color:#2C074D;
+}
+/* 下拉框中选中的行的字体 */
+#nav .subnav a:hover {
+    color: #ffffff;
+}   
+/* 下拉框中选中的行的框 */
+#nav .subnav li:hover { background-color: #6526B5; }
+
+.logo {
+    font-size: x-large;
+    position: relative;
+    margin-left: -40px;
+    margin-top: 15px;
+}
+
+/* 名字 */
+.name {
+    position: absolute;
+    font-size: 1.5em;
+    color: #AEA5B9;
+    font-family: '微软雅黑';
+    font-weight: 700;
+    top: 15px;
+    float: right;
+    /* margin-right: -10px; */
+    right: -300px;
+}
+
+/* 图片 */
+.image {
+    position: absolute;
+    border: 1px, solid, #AEA5B9; 
+    border-radius: 50%; 
+    width: 45px; 
+    height: 45px; 
+    right: 45px;
+    /* float: right;  */
+    /* margin-right: -220px;  */
+    /* margin-top: -5px;  */
+    top: 2px;
+}
+
+/* 中大CSer */
+.CSer {
+    left: -120px;
+    font-size: 2em;
+    font-family: '微软雅黑'; 
+    font-weight: 700; 
+    margin-top: 10px; 
+}
+
