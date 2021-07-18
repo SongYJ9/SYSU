@@ -56,8 +56,6 @@ blog：https://www.luogu.com.cn/blog/YuJieSong/
 
 洛谷个人空间：https://www.luogu.com.cn/user/296830
 
-（突然发现自己在洛谷的两篇题解加起来有 70+ 路人点赞啦哈哈哈）
-
 codeforces：https://codeforces.com/profile/SONGYJ9  [![](https://cfrating.ihcr.top/?user=SONGYJ9)](https://codeforces.ml/profile/SONGYJ9)
 
 If you wanna have a talk, please [1638846513@qq.com](https://mail.qq.com/)~
